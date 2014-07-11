@@ -299,4 +299,5 @@ msg: Timeout when waiting for localhost:9200
 **sol**
 
 sudo add­-apt­-repository ppa:webupd8team/java 
+
 sudo apt-­get install oracle-­java7­-installer
