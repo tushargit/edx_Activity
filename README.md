@@ -1,6 +1,6 @@
-** EdX Installation on Ubuntu 12.04 **
+ EdX Installation on Ubuntu 12.04 
 =======================================
-
-edx_installation manual with error resolved
+**STEP-1:**
+  sudo apt-get update -y
 
 
