@@ -60,7 +60,7 @@ password=xxxxx
 TASK: [mongo | install mongo server and recommends] ***************************
 
 msg: 'apt­-get install 'mongodb-­10gen=2.4.7' '
-failed: E : There are problems and -­y was used
+failed: E: There are problems and -­y was used
 
 without –force-yes
 ```
