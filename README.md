@@ -301,3 +301,33 @@ msg: Timeout when waiting for localhost:9200
 sudo add­-apt­-repository ppa:webupd8team/java 
 
 sudo apt-­get install oracle-­java7­-installer
+
+
+###6)Error in installing Supervisior
+```ruby
+TASK: [supervisor | install supervisor in its venv] ***************************
+failed: [localhost] => {"failed": true, "item": ""}
+msg: Could not get output from /usr/local/bin/virtualenv --help: Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python2.7/dist-packages/pkg_resources.py", line 2829, in <module>
+    working_set = WorkingSet._build_master()
+  File "/usr/local/lib/python2.7/dist-packages/pkg_resources.py", line 451, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/local/lib/python2.7/dist-packages/pkg_resources.py", line 464, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/local/lib/python2.7/dist-packages/pkg_resources.py", line 639, in resolve
+    raise DistributionNotFound(req)
+pkg_resources.DistributionNotFound: virtualenv==1.7.1.2
+
+
+FATAL: all hosts have already failed -- aborting
+
+PLAY RECAP ********************************************************************
+           to retry, use: --limit @/home/raeha/edx_sandbox.retry
+
+localhost                  : ok=65   changed=5    unreachable=0    failed=1 
+```
+Sol
+
+sudo  pip install virtualenv==1.7.1.2
