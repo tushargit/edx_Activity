@@ -303,7 +303,7 @@ sudo add­-apt­-repository ppa:webupd8team/java
 sudo apt-­get install oracle-­java7­-installer
 
 
-###6)Error in installing Supervisior
+###11)Error in installing Supervisior
 ```ruby
 TASK: [supervisor | install supervisor in its venv] ***************************
 failed: [localhost] => {"failed": true, "item": ""}
@@ -331,3 +331,5 @@ localhost                  : ok=65   changed=5    unreachable=0    failed=1
 Sol
 
 sudo  pip install virtualenv==1.7.1.2
+
+
