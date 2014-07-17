@@ -404,9 +404,13 @@ localhost : ok=54 changed=3 unreachable=0 failed=1
 ** Sol **
 
 sudo dpkg --configure -a
+
 sudo apt-get -f install
+
 sudo apt-get purge mongodb mongodb-clients mongodb-server mongodb-dev
+
 sudo apt-get purge mongodb-10gen
+
 sudo apt-get autoremove
 
 
