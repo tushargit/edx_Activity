@@ -402,7 +402,7 @@ to retry, use: --limit @/home/ninad/edx_sandbox.retry
 localhost : ok=54 changed=3 unreachable=0 failed=1
 ```
 
-** Sol **
+**Sol**
 
 sudo dpkg --configure -a
 
