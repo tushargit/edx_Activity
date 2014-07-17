@@ -328,8 +328,84 @@ PLAY RECAP ********************************************************************
 
 localhost                  : ok=65   changed=5    unreachable=0    failed=1 
 ```
-Sol
+**Sol**
 
 sudo  pip install virtualenv==1.7.1.2
+
+
+###12)Error in installing Mongodb
+```ruby
+TASK: [mongo | install mongo server and recommends] ***************************
+
+failed: [localhost] => {"failed": true, "item": ""}
+
+stderr: dpkg: error processing /var/cache/apt/archives/mongodb-10gen_2.4.7_i386.deb (--unpack):
+
+trying to overwrite '/usr/bin/mongo', which is also in package mongodb-clients 1:2.0.4-1ubuntu2.1
+
+dpkg-deb: error: subprocess paste was killed by signal (Broken pipe)
+
+Errors were encountered while processing:
+
+/var/cache/apt/archives/mongodb-10gen_2.4.7_i386.deb
+
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+stdout: Reading package lists...
+
+Building dependency tree...
+
+Reading state information...
+
+The following packages were automatically installed and are no longer required:
+
+language-pack-kde-en linux-headers-3.2.0-29 language-pack-kde-en-base
+
+kde-l10n-engb linux-headers-3.2.0-29-generic-pae libkms1 libreadline5
+
+openjdk-7-jre-lib
+
+Use 'apt-get autoremove' to remove them.
+
+The following NEW packages will be installed:
+
+mongodb-10gen
+
+0 upgraded, 1 newly installed, 0 to remove and 23 not upgraded.
+
+Need to get 0 B/87.1 MB of archives.
+
+After this operation, 221 MB of additional disk space will be used.
+
+(Reading database ... 300377 files and directories currently installed.)
+
+Unpacking mongodb-10gen (from .../mongodb-10gen_2.4.7_i386.deb) ...
+
+msg: 'apt-get install 'mongodb-10gen=2.4.7' ' failed: dpkg: error processing /var/cache/apt/archives/mongodb-10gen_2.4.7_i386.deb (--unpack):
+
+trying to overwrite '/usr/bin/mongo', which is also in package mongodb-clients 1:2.0.4-1ubuntu2.1
+
+dpkg-deb: error: subprocess paste was killed by signal (Broken pipe)
+
+Errors were encountered while processing:
+
+/var/cache/apt/archives/mongodb-10gen_2.4.7_i386.deb
+
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+FATAL: all hosts have already failed -- aborting
+
+PLAY RECAP ********************************************************************
+
+to retry, use: --limit @/home/ninad/edx_sandbox.retry
+
+localhost : ok=54 changed=3 unreachable=0 failed=1
+Sol**
+
+sudo dpkg --configure -a
+sudo apt-get -f install
+sudo apt-get purge mongodb mongodb-clients mongodb-server mongodb-dev
+sudo apt-get purge mongodb-10gen
+sudo apt-get autoremove
 
 
