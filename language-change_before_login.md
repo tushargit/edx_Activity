@@ -68,7 +68,7 @@ For implementing change  language option on home page (or before login/authentic
 
 * **Make following  changes in html code of index.html**
 
-```ruby
+```
 <%include file='modal/_modal-settings-language.html' /> 
 
 <header class="global" aria-label="${_('Global Navigation')}"> 
