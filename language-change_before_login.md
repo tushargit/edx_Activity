@@ -1,4 +1,4 @@
-For implementing change  language option on home page (or before login/authentication)   
+For implementing language-change option on home page (or before login/authentication)   
 =======================================================================================
 *  **sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py**
 
