@@ -22,7 +22,7 @@ Edit and replace 'hidden' to 'required' as given below
 Adding more non existing field in registration form like 'state' and 'pincode'
 ==============================================================================
 
-**  sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
+#. sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
   
 	<div class="group group-form group-form-secondary group-form-personalinformation"> 
         	<h2 class="sr">${_("Extra Personal Information")}</h2> 
