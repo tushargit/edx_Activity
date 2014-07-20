@@ -62,8 +62,8 @@ For implementing change  language option on home page (or before login/authentic
 
     context.update(extra_context) 
     return render_to_response('index.html', context) 
-    
-    ```
+   ``` 
+   
 * **sudo gedit /edx/app/edxapp/edx-platform/lms/templates/index.html**
 
 * **Make following  changes in html code of index.html**
