@@ -3,7 +3,7 @@ For implementing change  language option on home page (or before login/authentic
 *  **sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py**
 
 *  **After  changes your  index function will look like given below:**
-
+```
    index(request, extra_context={}, user=AnonymousUser()): 
     '''
     Render the edX main page. 
