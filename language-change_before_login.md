@@ -76,7 +76,7 @@ For implementing change  language option on home page (or before login/authentic
     <li class="nav-courseware-02"> 
 	    %if len(language_options) > 1: 
 	   
-	    <%include file='dashboard/_dashboard_info_language.html' /> 
+	    <% include file='dashboard/_dashboard_info_language.html' /> 
 	    %endif 
             </li> 
         </ol></nav> 
