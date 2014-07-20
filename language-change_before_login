@@ -1,5 +1,6 @@
  EdX Installation on Ubuntu 12.04 
 =======================================
+
 * **sudo apt-­get update ­-y**
 
 * **sudo apt-­get upgrade ­-y*
