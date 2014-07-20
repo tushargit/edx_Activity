@@ -1,7 +1,8 @@
-Language-change_before_login
+ EdX Installation on Ubuntu 12.04 
 =======================================
-*  sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
+* **sudo apt-­get update ­-y**
 
+* **sudo apt-­get upgrade ­-y*
 *  After  changes your  index function will look like given below:
 
   def index(request, extra_context={}, user=AnonymousUser()): 
