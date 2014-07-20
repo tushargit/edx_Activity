@@ -22,7 +22,26 @@ Edit and replace **'hidden'** to **'required'** as given below
 Adding more non existing field in registration form like 'state' and 'pincode'
 ==============================================================================
 
- 1) sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
+
+1)   sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
+
+Edit and replace **'hidden'** to **'required'** for **'country'** field as given below
+
+
+	REGISTRATION_EXTRA_FIELDS = { 
+    		'level_of_education': 'optional', 
+    		'gender': 'optional', 
+    		'year_of_birth': 'optional', 
+    		'mailing_address': 'optional', 
+    		'goals': 'optional', 
+    		'honor_code': 'required', 
+    		'city': 'required', 
+    		'pincode': 'required', 
+    		'country': 'required', 
+    		'state': 'required', 
+		}
+
+2) sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
   
 	<div class="group group-form group-form-secondary group-form-personalinformation"> 
         	<h2 class="sr">${_("Extra Personal Information")}</h2> 
@@ -58,7 +77,7 @@ Adding more non existing field in registration form like 'state' and 'pincode'
 		................................
 		.....................................
 
-2)  sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
+3)  sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
 
 	def create_account(request, post_override=None):
 	.....................................
@@ -108,23 +127,6 @@ Adding more non existing field in registration form like 'state' and 'pincode'
 	...............................................
 	.......................................
 
-3)  sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
-
-edit and replace **'hidden'** to **'required'** for **'country'** field as given below
-
-
-	REGISTRATION_EXTRA_FIELDS = { 
-    		'level_of_education': 'optional', 
-    		'gender': 'optional', 
-    		'year_of_birth': 'optional', 
-    		'mailing_address': 'optional', 
-    		'goals': 'optional', 
-    		'honor_code': 'required', 
-    		'city': 'required', 
-    		'pincode': 'required', 
-    		'country': 'required', 
-    		'state': 'required', 
-		}
 
 4)sudo gedit /edx/app/edxapp/edx-platform/common/djangoapp/student/models.py
 
@@ -141,7 +143,7 @@ edit and replace **'hidden'** to **'required'** for **'country'** field as given
 	pincode = models.TextField(blank=True, null=True)
 
 
- 6)  Create **'state'** and **'pincode'** field in
+5)  Create **'state'** and **'pincode'** field in
  
 	Database: edxapp
 	Table : auth_userprofile
