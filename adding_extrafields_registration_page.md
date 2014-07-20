@@ -3,7 +3,7 @@
 
 sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
 
-Edit and replace 'hidden' to 'required' as given below
+Edit and replace **'hidden'** to **'required'** as given below
 
 
 
@@ -14,7 +14,7 @@ Edit and replace 'hidden' to 'required' as given below
     		'mailing_address': 'optional', 
     		'goals': 'optional', 
     		'honor_code': 'required', 
-    		'city': 'required', 
+    		**'city': 'required'**, 
     		'country': 'required',
   
 		}
