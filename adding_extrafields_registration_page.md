@@ -19,7 +19,8 @@ REGISTRATION_EXTRA_FIELDS = {
   
 }
 
-D)For creating more non existing field   in registration form like state and pincode
+For creating more non existing field   in registration form like state and pincode
+==================================================================================
 
 1)  sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
   
