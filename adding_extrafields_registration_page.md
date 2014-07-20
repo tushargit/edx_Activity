@@ -1,5 +1,5 @@
- For adding countries in edx registration form using existing  edx provided field
-=================================================================================
+ Adding 'country' and 'city' field in edx registration form using existing edx provided field
+=============================================================================================
 
 sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
 
@@ -20,8 +20,8 @@ REGISTRATION_EXTRA_FIELDS = {
   
 }
 
-For creating more non existing field in registration form like state and pincode
-==================================================================================
+Adding more non existing field in registration form like 'state' and 'pincode'
+==============================================================================
 
 1)  sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
   
