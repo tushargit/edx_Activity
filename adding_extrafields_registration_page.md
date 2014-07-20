@@ -108,41 +108,40 @@ Adding more non existing field in registration form like 'state' and 'pincode'
 	...............................................
 	.......................................
 
-3)    sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
+3)  sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
 
-edit and replace 'hidden' from 'required' for country as given below
+edit and replace 'hidden' to 'required' for 'country' field as given below
 
 
-
-REGISTRATION_EXTRA_FIELDS = { 
-    'level_of_education': 'optional', 
-    'gender': 'optional', 
-    'year_of_birth': 'optional', 
-    'mailing_address': 'optional', 
-    'goals': 'optional', 
-    'honor_code': 'required', 
-    'city': 'required', 
-    'pincode': 'required', 
-    'country': 'required', 
-    'state': 'required', 
-}
+	REGISTRATION_EXTRA_FIELDS = { 
+    		'level_of_education': 'optional', 
+    		'gender': 'optional', 
+    		'year_of_birth': 'optional', 
+    		'mailing_address': 'optional', 
+    		'goals': 'optional', 
+    		'honor_code': 'required', 
+    		'city': 'required', 
+    		'pincode': 'required', 
+    		'country': 'required', 
+    		'state': 'required', 
+		}
 
 4)sudo gedit /edx/app/edxapp/edx-platform/common/djangoapp/student/models.py
 
-STATE_CHOICES = ( 
-        ('O', ugettext_noop('ORISSA')), 
-        ('U', ugettext_noop("UTTAR PRADESH")), 
-        ('M', ugettext_noop("MAHARASHTRA")), 
-        ('D', ugettext_noop("DELHI")) 
-    ) 
-city = models,TextField(blank=True, null=True)
-state = models.CharField( 
-        		blank=True, null=True, max_length=6, db_index=True, 
-        		choices=STATE_CHOICES )
-pincode = models.TextField(blank=True, null=True)
+	STATE_CHOICES = ( 
+	        ('O', ugettext_noop('ORISSA')), 
+	        ('U', ugettext_noop("UTTAR PRADESH")), 
+	        ('M', ugettext_noop("MAHARASHTRA")), 
+	        ('D', ugettext_noop("DELHI")) 
+	    ) 
+	city = models,TextField(blank=True, null=True)
+	state = models.CharField( 
+        			blank=True, null=True, max_length=6, db_index=True, 
+        			choices=STATE_CHOICES )
+	pincode = models.TextField(blank=True, null=True)
 
 
- 6)  Create state and pincode field in
- Database:  edxapp
-       Table : auth_userprofile
+ 6)  Create *'state'* and *'pincode'* field in
+	Database:  edxapp
+	Table : auth_userprofile
  
