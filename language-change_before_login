@@ -1,7 +1,7 @@
  
-1) sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
+ *  sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
 
-2) After  changes your  index function will look like given below:
+*  After  changes your  index function will look like given below:
 
   def index(request, extra_context={}, user=AnonymousUser()): 
     """ 
@@ -51,9 +51,9 @@
     return render_to_response('index.html', context) 
     
     
-3)sudo gedit /edx/app/edxapp/edx-platform/lms/templates/index.html
+* sudo gedit /edx/app/edxapp/edx-platform/lms/templates/index.html
 
-4) Make following  changes in html code of index.html
+*  Make following  changes in html code of index.html
 
 <%include file='modal/_modal-settings-language.html' /> 
 
