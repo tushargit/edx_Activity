@@ -7,18 +7,17 @@ Edit and replace 'hidden' to 'required' as given below
 
 
 
-REGISTRATION_EXTRA_FIELDS = { 
-    'level_of_education': 'optional', 
-    'gender': 'optional', 
-    'year_of_birth': 'optional', 
-    'mailing_address': 'optional', 
-    'goals': 'optional', 
-    'honor_code': 'required', 
-    'city': 'required', 
-    'country': 'required', 
-     
+	REGISTRATION_EXTRA_FIELDS = { 
+    		'level_of_education': 'optional', 
+    		'gender': 'optional', 
+    		'year_of_birth': 'optional', 
+    		'mailing_address': 'optional', 
+    		'goals': 'optional', 
+    		'honor_code': 'required', 
+    		'city': 'required', 
+    		'country': 'required',
   
-}
+		}
 
 Adding more non existing field in registration form like 'state' and 'pincode'
 ==============================================================================
