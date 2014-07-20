@@ -1,6 +1,7 @@
  For adding countries in edx registration form using existing  edx provided field
+=================================================================================
 
-1)sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
+sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
 
 edit and replace 'hidden' from 'required' for country as given below
 
@@ -19,7 +20,7 @@ REGISTRATION_EXTRA_FIELDS = {
   
 }
 
-For creating more non existing field   in registration form like state and pincode
+For creating more non existing field in registration form like state and pincode
 ==================================================================================
 
 1)  sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
