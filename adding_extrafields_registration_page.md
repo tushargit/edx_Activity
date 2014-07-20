@@ -82,13 +82,13 @@ Adding more non existing field in registration form like 'state' and 'pincode'
                 	'gender': _('Your gender is required'), 
                 	'year_of_birth': _('Your year of birth is required'), 
                 	'mailing_address': _('Your mailing address is required'), 
-                	'goals': _('A description of your goals is required'), 
-	    		'pincode': _('A pincode is required'), 
-                	'city': _('A city is required'), 
-	    		'state': _('A state is required'), 
+                	'goals': _('A description of your goals is required'),
+                	'pincode': _('A pincode is required'), 
+                	'city': _('A city is required'),
+                	'state': _('A state is required'), 
                 	'country': _('A country is required')
-			.......................................
-			.......................................
+                	.......................................
+                	.......................................
 			
 b) def _do_create_account(post_vars):
 .........................................
