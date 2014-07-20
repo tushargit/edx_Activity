@@ -90,23 +90,23 @@ Adding more non existing field in registration form like 'state' and 'pincode'
                 	.......................................
                 	.......................................
 			
-b) def _do_create_account(post_vars):
-.........................................
-.........................................
- registration.register(user) 
+	def _do_create_account(post_vars):
+	.........................................
+	.........................................
+ 	registration.register(user) 
  
-    profile = UserProfile(user=user) 
-    profile.name = post_vars['name'] 
-    profile.level_of_education = post_vars.get('level_of_education') 
-    profile.gender = post_vars.get('gender') 
-    profile.mailing_address = post_vars.get('mailing_address') 
-    profile.city = post_vars.get('city') 
-    profile.pincode = post_vars.get('pincode')  # for adding field in database
-    profile.state = post_vars.get('state') 
-    profile.country = post_vars.get('country') 
-    profile.goals = post_vars.get('goals') 
-...............................................
-.......................................
+    	profile = UserProfile(user=user) 
+    	profile.name = post_vars['name'] 
+    	profile.level_of_education = post_vars.get('level_of_education') 
+    	profile.gender = post_vars.get('gender') 
+    	profile.mailing_address = post_vars.get('mailing_address') 
+    	profile.city = post_vars.get('city') 
+    	profile.pincode = post_vars.get('pincode')  # for adding field in database
+    	profile.state = post_vars.get('state') 
+    	profile.country = post_vars.get('country') 
+    	profile.goals = post_vars.get('goals') 
+	...............................................
+	.......................................
 
 3)    sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
 
