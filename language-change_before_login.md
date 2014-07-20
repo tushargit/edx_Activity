@@ -1,36 +1,44 @@
 For implementing change  language option on home page (or before login/authentication)   
 =======================================================================================
-*  sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
+*  **sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py**
 
-*  After  changes your  index function will look like given below:
+*  **After  changes your  index function will look like given below:**
 
-*  def index(request, extra_context={}, user=AnonymousUser()): 
+  def index(request, extra_context={}, user=AnonymousUser()): 
     """ 
     Render the edX main page. 
 
     extra_context is used to allow immediate display of certain modal windows, eg signup, 
     as used by external_auth. 
     """ 
-     #mycode 
+    
     language_options = DarkLangConfig.current().released_languages_list 
-
-    # add in the default language if it's not in the list of released languages 
-
+   
+   """
+     add in the default language if it's not in the list of released languages 
+   """
+   
     if settings.LANGUAGE_CODE not in language_options: 
         language_options.append(settings.LANGUAGE_CODE) 
         # Re-alphabetize language options 
         language_options.sort() 
-
-    # try to get the prefered language for the user 
+   
+   """
+    try to get the prefered language for the user 
+   
+   """ 
     cur_lang_code = UserPreference.get_preference(request.POST.get('user'), LANGUAGE_KEY) 
     if cur_lang_code: 
-        # if the user has a preference, get the name from the code 
+        """
+         if the user has a preference, get the name from the code 
+        """
         current_language = settings.LANGUAGE_DICT[cur_lang_code] 
     else: 
-        # if the user doesn't have a preference, use the default language 
+        """
+         if the user doesn't have a preference, use the default language 
+        """
         current_language = settings.LANGUAGE_DICT[settings.LANGUAGE_CODE] 
    
-    #mycode 
 
 
 
