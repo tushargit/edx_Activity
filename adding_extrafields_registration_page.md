@@ -3,7 +3,7 @@
 
 sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
 
-edit and replace 'hidden' from 'required' for country as given below
+Edit and replace 'hidden' to 'required' as given below
 
 
 
