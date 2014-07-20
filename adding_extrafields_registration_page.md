@@ -24,39 +24,39 @@ Adding more non existing field in registration form like 'state' and 'pincode'
 
 1)  sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html
   
-<div class="group group-form group-form-secondary group-form-personalinformation"> 
-        <h2 class="sr">${_("Extra Personal Information")}</h2> 
-
-        <ol class="list-input"> 
-          % if settings.REGISTRATION_EXTRA_FIELDS['city'] != 'hidden': 
-          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['city']} text" id="field-city"> 
-            <label for="city">${_('City')}</label> 
-            <input id="city" type="text" name="city" value="" placeholder="${_('example: Bhubaneswar')}" aria-describedby="city-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['city'] == 'required' else ''} /> 
-          </li> 
-          % endif 
-
-          % if settings.REGISTRATION_EXTRA_FIELDS['pincode'] != 'hidden': 
-          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['pincode']} text" id="field-pincode"> 
-            <label for="pincode">${_('Pincode')}</label> 
-          <input id="pincode" type="text" name="pincode" value="" placeholder="${_('example: New York')}" aria-describedby="pincode-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['pincode'] == 'required' else ''} /> 
-        </li> 
-         % endif 
+	<div class="group group-form group-form-secondary group-form-personalinformation"> 
+        	<h2 class="sr">${_("Extra Personal Information")}</h2> 
 	
-          % if settings.REGISTRATION_EXTRA_FIELDS['state'] != 'hidden': 
-          <li class="field-group"> 
-          <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['state']} select" id="field-state"> 
-              <label for="state">${_("State")}</label> 
-              <select id="state" name="state" ${'required aria-required="true"' ifsettings.REGISTRATION_EXTRA_FIELDS['state'] == 'required' else ''}> 
-                <option value="">--</option> 
-                %for code, state in UserProfile.STATE_CHOICES: 
-                <option value="${code}">${_(state)}</option> 
-                %endfor 
-              </select> 
-            </div> 
-          </li> 
-          % endif
-................................
-.....................................
+        	<ol class="list-input"> 
+          	% if settings.REGISTRATION_EXTRA_FIELDS['city'] != 'hidden': 
+          		<li class="field ${settings.REGISTRATION_EXTRA_FIELDS['city']} text" id="field-city"> 
+            			<label for="city">${_('City')}</label> 
+            			<input id="city" type="text" name="city" value="" placeholder="${_('example: Bhubaneswar')}" aria-describedby="city-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['city'] == 'required' else ''} /> 
+          		</li> 
+          	% endif 
+	
+        	% if settings.REGISTRATION_EXTRA_FIELDS['pincode'] != 'hidden': 
+          		<li class="field ${settings.REGISTRATION_EXTRA_FIELDS['pincode']} text" id="field-pincode"> 
+            			<label for="pincode">${_('Pincode')}</label> 
+          			<input id="pincode" type="text" name="pincode" value="" placeholder="${_('example: New York')}" aria-describedby="pincode-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['pincode'] == 'required' else ''} /> 
+        		</li> 
+        	% endif 
+	
+          	% if settings.REGISTRATION_EXTRA_FIELDS['state'] != 'hidden': 
+          		<li class="field-group"> 
+          		<div class="field ${settings.REGISTRATION_EXTRA_FIELDS['state']} select" id="field-state"> 
+              		<label for="state">${_("State")}</label> 
+              		<select id="state" name="state" ${'required aria-required="true"' ifsettings.REGISTRATION_EXTRA_FIELDS['state'] == 'required' else ''}> 
+                		<option value="">--</option> 
+                		%for code, state in UserProfile.STATE_CHOICES: 
+                		<option value="${code}">${_(state)}</option> 
+                		%endfor 
+              		</select> 
+            		</div> 
+          		</li> 
+          	% endif
+		................................
+		.....................................
 
 2)  sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
 
