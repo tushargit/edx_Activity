@@ -67,6 +67,7 @@ For implementing change  language option on home page (or before login/authentic
 * **sudo gedit /edx/app/edxapp/edx-platform/lms/templates/index.html**
 
 * **Make following  changes in html code of index.html**
+
 ```
 <%include file='modal/_modal-settings-language.html' /> 
 
