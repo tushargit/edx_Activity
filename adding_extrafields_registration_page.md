@@ -141,7 +141,7 @@ edit and replace 'hidden' to 'required' for 'country' field as given below
 	pincode = models.TextField(blank=True, null=True)
 
 
- 6)  Create *'state'* and *'pincode'* field in
+ 6)  Create **'state'** and **'pincode'** field in
 	Database:  edxapp
 	Table : auth_userprofile
  
