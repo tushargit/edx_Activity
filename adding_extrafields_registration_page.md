@@ -14,7 +14,7 @@ Edit and replace **'hidden'** to **'required'** as given below
     		'mailing_address': 'optional', 
     		'goals': 'optional', 
     		'honor_code': 'required', 
-    		**'city': 'required'**, 
+    		'city': 'required', 
     		'country': 'required',
   
 		}
@@ -110,7 +110,7 @@ Adding more non existing field in registration form like 'state' and 'pincode'
 
 3)  sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py
 
-edit and replace 'hidden' to 'required' for 'country' field as given below
+edit and replace **'hidden'** to **'required'** for **'country'** field as given below
 
 
 	REGISTRATION_EXTRA_FIELDS = { 
