@@ -142,6 +142,7 @@ edit and replace 'hidden' to 'required' for 'country' field as given below
 
 
  6)  Create **'state'** and **'pincode'** field in
-	Database:  edxapp
+ 
+	Database: edxapp
 	Table : auth_userprofile
  
