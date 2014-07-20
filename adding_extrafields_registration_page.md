@@ -60,7 +60,7 @@ Adding more non existing field in registration form like 'state' and 'pincode'
 
 2)  sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
 
-- def create_account(request, post_override=None):
+	def create_account(request, post_override=None):
 	.....................................
 	...................................
 	#for valdating state 
