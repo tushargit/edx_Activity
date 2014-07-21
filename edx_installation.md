@@ -33,8 +33,8 @@
 
 ###1) Error in creating database for edxapp:
 
-```ruby
-TASK [edxlocal | create a database for edxapp]*****************************
+```
+`TASK [edxlocal | create a database for edxapp]*****************************
 ```
 
 
