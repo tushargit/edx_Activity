@@ -163,7 +163,7 @@ Command python setup.py egg_info failed with error code 1 in /edx/app/discern/ve
 
 Storing debug log for failure in /edx/app/discern/.pip/pip.log
 ```
-Sol
+**Sol**
 
 a)cd /edx/app/discern
 
