@@ -14,7 +14,7 @@
 * cd /var/tmp/configuration/playbooks
 * sudo ansible-­playbook ­-c local ./edx_sandbox.yml ­-i "localhost,*
 
-  **OR**
+  OR
 
   sudo ansible­-playbook -­c local ./edx_sandbox.yml -­i “x.x.x.x,"
 
@@ -284,7 +284,7 @@ failed: [localhost] => (item={'host': u'localhost', 'port': u'9200', 'service': 
 
 msg: Timeout when waiting for localhost:9200
 ```
-**sol**
+**Sol**
 
 sudo add­-apt­-repository ppa:webupd8team/java 
 
