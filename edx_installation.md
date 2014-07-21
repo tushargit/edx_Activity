@@ -35,7 +35,7 @@
 
 
   
-.. note :: TASK [edxlocal | create a database for edxapp]
+ ..note:: TASK [edxlocal | create a database for edxapp]
  
 
 
