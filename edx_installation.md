@@ -33,7 +33,7 @@
 
 ###1) Error in creating database for edxapp:
   
-   .. note
+..
    :: TASK [edxlocal | create a database for edxapp]
  
 
