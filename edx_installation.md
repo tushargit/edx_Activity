@@ -14,7 +14,7 @@
 * cd /var/tmp/configuration/playbooks
 * sudo ansible-­playbook ­-c local ./edx_sandbox.yml ­-i "localhost,*
 
-                          **or** 
+  **OR**
                           
   sudo ansible­-playbook -­c local ./edx_sandbox.yml -­i “x.x.x.x,"
 
