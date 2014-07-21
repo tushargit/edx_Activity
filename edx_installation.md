@@ -144,13 +144,13 @@ Storing complete log in /root/.pip/pip.log
 a)sudo gedit /edx/app/xqueue/xqueue/requirements.txt
 
 replace
-
+```
 ­-e git://github.com/pika/pika.git@a731347fc0#egg=pika
 
 with
 
 pika
-
+```
 b)sudo gedit /var/tmp/configuration/playbooks/roles/xqueue/tasks/deploy.yml
 
 and comments the following
@@ -183,9 +183,9 @@ b)git clone https://github.com/defance/discern.git
 Or
 
 a)sudo gedit /var/tmp/configuration/playbooks/roles/discern/defaults/main.yml
-
-b)changed the value of variable 'discern_source_repo' to 'https://github.com/defance/discern.git'
-
+```
+changed the value of variable 'discern_source_repo' to 'https://github.com/defance/discern.git'
+```
 ###  7) Internal Server Error in CMS running
 
 **Sol**
@@ -221,7 +221,7 @@ user@example.com
 sudo -­u www­-data /edx/bin/python.edxapp ./manage.py lms ­­--settings aws changepassword user
 
 sudo -­u www­-data /edx/bin/python.edxapp ./manage.py lms ­­--settings aws shell
-
+```
 from django.contrib.auth.models import User
 
 me = User.objects.get(username="user")
@@ -229,6 +229,7 @@ me = User.objects.get(username="user")
 me.is_superuser = True
 
 me.save()
+```
 
 * run migrations ­
 
@@ -241,16 +242,16 @@ sudo -­u www­-data /edx/bin/python.edxapp ./manage.py lms syncdb ­­ --migrat
 a)sudo gedit /edx/app/discern/discern/requirements.txt
 
 replace
-
+```
 ­-e git+https://github.com/edx/ease.git@965a61b0701bb93bebdcd7173c3538008a1ea009#egg=ease
 
 with
 
 ease
-
+```
 c)sudo gedit /var/tmp/configuration/playbooks/roles/discern/tasks/deploy.yml
 
-d) just comments following
+ and comment following
 ```
  name: git checkout discern repo into discern_code_dir
 
