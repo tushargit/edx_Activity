@@ -33,8 +33,9 @@
 
 ###1) Error in creating database for edxapp:
 
-
-`TASK [edxlocal | create a database for edxapp]*****************************
+```
+TASK [edxlocal | create a database for edxapp]*****************************
+```
 
 
 
@@ -44,17 +45,15 @@ create file .my.cnf  with database username and password as similar to following
 sudo gedit /root/.my.cnf 
 
  ```
-
 [client]
 
 user=root
 
 password=xxxxx
-
 ```
 
 ###2)Error in installing mongodb:
-```ruby
+```
 TASK: [mongo | install mongo server and recommends] ***************************
 
 msg: 'apt­-get install 'mongodb-­10gen=2.4.7' '
@@ -69,7 +68,7 @@ a)sudo apt-­get remove mongodb­-clients
 b)sudo apt­-get install mongodb-­10gen=2.4.7
 
 ###3)Error in installing npm:
-```ruby
+```
 msg: 'apt­-get install 'npm' 'npm' 'gettext' ' failed:
 
 The following packages have unmet dependencies:
@@ -131,7 +130,7 @@ d)sudo apt­-get install npm
 sudo /edx/app/ora/venvs/ora/bin/python -­m nltk.downloader ­-d /edx/var/ora/nltk_data all
 
 ###5)Error in installing pika
-```ruby
+```
 msg:Command /usr/bin/git clone -­q git://github.com/pika/pika.git /edx/app/xqueue/venvs/xqueue/src/pika/
 
 failed with error code 128 in None
@@ -164,7 +163,7 @@ and comments the following
 ```
 
 ###6)Error in installing discern
-```ruby
+```
 IOError: Could not build the egg.
 
 ­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­
@@ -259,7 +258,7 @@ d) just comments following
 
 ```
 ### 9) Error in edxapp sync and migrate
-```ruby
+```
 msg:ImportError: No module named dateutil.relativedelta
 ```
 **Sol **
@@ -284,7 +283,7 @@ d)copy folder python_dateutil­2.2­py2.7.egg­info and paste into
 
 
 ### 10) Error in forum installation
-```ruby
+```
 TASK: [forum | test that the required service are listening] ******************
 
 failed: [localhost] => (item={'host': u'localhost', 'port': u'9200', 'service': 'elasticsearch'}) =>
@@ -303,7 +302,7 @@ sudo apt-­get install oracle-­java7­-installer
 
 
 ###11)Error in installing Supervisior
-```ruby
+```
 TASK: [supervisor | install supervisor in its venv] ***************************
 failed: [localhost] => {"failed": true, "item": ""}
 msg: Could not get output from /usr/local/bin/virtualenv --help: Traceback (most recent call last):
@@ -333,7 +332,7 @@ sudo  pip install virtualenv==1.7.1.2
 
 
 ###12)Error in installing Mongodb
-```ruby
+```
 TASK: [mongo | install mongo server and recommends] ***************************
 
 failed: [localhost] => {"failed": true, "item": ""}
