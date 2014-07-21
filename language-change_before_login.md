@@ -1,9 +1,9 @@
-**For implementing language-change option on home page (or before login/authentication)**
-  -------------------------------------------------------------------------------------
+For implementing language-change option on home page (or before login/authentication)
+-------------------------------------------------------------------------------------
 
-*  **sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py**
+*  sudo  gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py
 
-*  **After  changes your  index function will look like given below:**
+*  After  changes your  index function will look like given below:
 ```
    index(request, extra_context={}, user=AnonymousUser()): 
     '''
@@ -65,9 +65,8 @@
     return render_to_response('index.html', context) 
    ``` 
    
-* **sudo gedit /edx/app/edxapp/edx-platform/lms/templates/index.html**
-
-* **Make following  changes in html code of index.html**
+* sudo gedit /edx/app/edxapp/edx-platform/lms/templates/index.html
+* Make following  changes in html code of index.html
 
 ```
 <%include file='modal/_modal-settings-language.html' /> 
