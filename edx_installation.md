@@ -13,9 +13,7 @@
 * sudo pip install ­-r requirements.txt
 * cd /var/tmp/configuration/playbooks
 * sudo ansible-­playbook ­-c local ./edx_sandbox.yml ­-i "localhost,*
-
   **OR**
-                          
   sudo ansible­-playbook -­c local ./edx_sandbox.yml -­i “x.x.x.x,"
 
 ##  Issues in edX Ubuntu 12.04 Installation
