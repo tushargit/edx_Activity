@@ -1,33 +1,25 @@
  EdX Installation on Ubuntu 12.04 
 =======================================
-* **sudo apt-­get update ­-y**
+* sudo apt-­get update ­-y
+* sudo apt-­get upgrade ­-y
 
-* **sudo apt-­get upgrade ­-y**
+* reboot
 
-* **reboot**
+* sudo apt-get install -y build-essential software-properties-common python-software-properties curl git-core libxml2-dev libxslt1-dev python-pip python-apt python-dev
 
-* **sudo apt-get install -y build-essential software-properties-common python-software-properties curl git-core libxml2-dev libxslt1-dev python-pip python-apt python-dev**
-
-* **wget https://bitbucket.org/pypa/setuptools/raw/0.8/ez_setup.py ­O ­ | sudo python**
-
-* **sudo pip install ­­--upgrade pip**
-
-* **sudo pip install ­­--upgrade virtualenv**
-
-* **cd /var/tmp**
-
-* **git clone -­b release https://github.com/edx/configuration**
-
-* **cd /var/tmp/configuration**
-* **sudo pip install ­-r requirements.txt**
-
-* **cd /var/tmp/configuration/playbooks**
-
-* **sudo ansible-­playbook ­-c local ./edx_sandbox.yml ­-i "localhost,"**
+* wget https://bitbucket.org/pypa/setuptools/raw/0.8/ez_setup.py ­O ­ | sudo python
+* sudo pip install ­­--upgrade pip
+* sudo pip install ­­--upgrade virtualenv
+* cd /var/tmp
+* git clone -­b release https://github.com/edx/configuration
+* cd /var/tmp/configuration
+* sudo pip install ­-r requirements.txt
+* cd /var/tmp/configuration/playbooks
+* sudo ansible-­playbook ­-c local ./edx_sandbox.yml ­-i "localhost,*
 
     **or** instead of localhost you can use serverip as below
 
-* **sudo ansible­-playbook -­c local ./edx_sandbox.yml -­i “x.x.x.x,"**
+* sudo ansible­-playbook -­c local ./edx_sandbox.yml -­i “x.x.x.x,"
 
 ##  Issues in edX Ubuntu 12.04 Installation
 
