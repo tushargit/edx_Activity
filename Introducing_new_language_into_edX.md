@@ -3,7 +3,7 @@ Introducing_new_language_into_edX
 
 Considering creation of Assames language:
 
-1. create a python virtualenv and install all of the python requirements
+#. create a python virtualenv and install all of the python requirements
 
 ```
 	cd /edx/app/edxapp/edx-platform/
@@ -16,7 +16,7 @@ Considering creation of Assames language:
 	pip install markey
 ```
 
-2. Extract the .po source files
+#. Extract the .po source files
 
 	Below command will extract all the strings from files(*.py,*.html) into *.po files of */edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/*
 	If *.po files are there,the below command will override the *.po files with the extra strings that are added(i.e. in *.py, *.html files ) and if there is no *.po files or you have deleted them then also it will create *.po files.
