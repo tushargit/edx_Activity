@@ -11,3 +11,6 @@ This repository contains edX activities:
 
 `Language Preference before login
 <https://github.com/tushargit/edx_Activity/blob/master/language-change_before_login.md>`_
+
+`Introducing new language into edx
+<https://github.com/MitaliNayak/edx_Activity/blob/master/Introducing_new_language_into_edX.md>`_
