@@ -27,21 +27,21 @@ If *.po files are there,the below command will override the *.po files with the 
 
 3) create an language code directory
 
-considering *'as'* as the language code for Assames language
+considering **'as'** as the language code for Assames language
 
 ```
 	cd /edx/app/edxapp/edx-platform/conf/locale/
 	mkdir as/
 ```
 
-4) Copy all the files from 'en' folder into 'as' folder
+4) Copy all the files from **'en' ** folder into **'as'** folder
 
 
 ```
 	cp -r en/* as/
 ```
 
-5)  Update the .po files in the as/ directory for you translation strings
+5)  Update the .po files in the **'as'** directory for you translation strings
 
 
 ```
@@ -54,14 +54,14 @@ considering *'as'* as the language code for Assames language
   	.....................
 ```
 
-6) Add the language into /edx/app/edxapp/edx-platform/conf/locale/config.yaml
+6) Add the language into **/edx/app/edxapp/edx-platform/conf/locale/config.yaml**
 
 
 ```
 	 as  # Assames
 ```
 
-7) Add the language into /edx/app/edxapp/edx-platform/lms/envs/common.py
+7) Add the language into **/edx/app/edxapp/edx-platform/lms/envs/common.py**
 
 ```
 	LANGUAGES = (
@@ -71,7 +71,7 @@ considering *'as'* as the language code for Assames language
 ```
 
 
-8) Make changes to django-partial.po,djangojs-partial.po,mako.po by replacing 'en' to 'as'
+8) Make changes to **django-partial.po**, **djangojs-partial.po**, **mako.po"" by replacing **'en'** to **'as'**
 
 ```
 
@@ -89,7 +89,7 @@ considering *'as'* as the language code for Assames language
 The above command will generate *.mo files
 
 
-10) Add "as" to your list of supported languages
+10) Add **'as'** to your list of supported languages
 
 ```
 
