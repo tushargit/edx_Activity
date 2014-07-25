@@ -4,7 +4,7 @@ Introducing_new_language_into_edX
 Considering creation of Assames language:
 
 1. create a python virtualenv and install all of the python requirements
-````````````````````````````````````````````````````````````````````````
+
 
 	cd /edx/app/edxapp/edx-platform/
 	pip install --exists-action w -r requirements/edx/pre.txt
