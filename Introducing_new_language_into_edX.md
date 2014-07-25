@@ -18,14 +18,14 @@ Considering creation of Assames language:
 
 2)  Extract the .po source files
 
-	Below command will extract all the strings from files(*.py,*.html) into *.po files of */edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/*
+Below command will extract all the strings from files(*.py,*.html) into *.po files of */edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/*
 	If *.po files are there,the below command will override the *.po files with the extra strings that are added(i.e. in *.py, *.html files ) and if there is no *.po files or you have deleted them then also it will create *.po files.
 
 ```
 	i18n_tool extract
 ```
 
-3. create an language code director
+3) create an language code director
 
 considering *'as'* as the language code for Assames language
 
@@ -34,14 +34,14 @@ considering *'as'* as the language code for Assames language
 	mkdir as/
 ```
 
-4. Copy all the files from 'en' folder into 'as' folder
+4) Copy all the files from 'en' folder into 'as' folder
 
 
 ```
 	cp -r en/* as/
 ```
 
-5. Update the .po files in the as/ directory for you translation strings
+5)  Update the .po files in the as/ directory for you translation strings
 
 
 ```
@@ -54,14 +54,14 @@ considering *'as'* as the language code for Assames language
   	.....................
 ```
 
-6. Add the language into /edx/app/edxapp/edx-platform/conf/locale/config.yaml
+6) Add the language into /edx/app/edxapp/edx-platform/conf/locale/config.yaml
 
 
 ```
 	 as  # Assames
 ```
 
-7. Add the language into /edx/app/edxapp/edx-platform/lms/envs/common.py
+7) Add the language into /edx/app/edxapp/edx-platform/lms/envs/common.py
 
 ```
 	LANGUAGES = (
@@ -71,7 +71,7 @@ considering *'as'* as the language code for Assames language
 ```
 
 
-8. Make changes to django-partial.po,djangojs-partial.po,mako.po by replacing 'en' to 'as'
+8) Make changes to django-partial.po,djangojs-partial.po,mako.po by replacing 'en' to 'as'
 
 ```
 
@@ -80,7 +80,7 @@ considering *'as'* as the language code for Assames language
 ```
 
 
-9. Generate the compiled files
+9) Generate the compiled files
 
 ```
 
@@ -89,7 +89,7 @@ considering *'as'* as the language code for Assames language
 The above command will generate *.mo files
 
 
-10. Add "as" to your list of supported languages
+10) Add "as" to your list of supported languages
 
 ```
 
@@ -98,7 +98,7 @@ The above command will generate *.mo files
 	Save it.
 ```
 
-11. Sometimes the changes may not reflect so start the lms and cms:
+11) Sometimes the changes may not reflect so start the lms and cms:
 
 ```
 
@@ -106,8 +106,9 @@ The above command will generate *.mo files
   	sudo /edx/bin/supervisorctl -c /edx/etc/supervisord.conf restart edxapp:
 ```
   	
-  
+```ruby 
 Refresh the page to see the changes in the browser.There is a delay of 2.5 mins on the main page but on other pages it reflects.
+```
 
   
 	
