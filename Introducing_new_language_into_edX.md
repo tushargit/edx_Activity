@@ -14,8 +14,8 @@ Considering creation of Assames language:
 	pip install --exists-action w -r requirements/edx/github.txt
 	pip install --exists-action w -r requirements/edx/local.txt
 	pip install markey
-	
-  
+
+
 2. Extract the .po source files
 ```````````````````````````````
 
