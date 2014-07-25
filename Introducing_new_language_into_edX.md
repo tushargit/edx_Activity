@@ -14,8 +14,9 @@ Considering creation of Assames language:
 	pip install --exists-action w -r requirements/edx/github.txt
 	pip install --exists-action w -r requirements/edx/local.txt
 	pip install markey
+	
   
-2. extract the .po source files
+2. Extract the .po source files
 ```````````````````````````````
 
 Below command will extract all the strings from files(*.py,*.html) into *.po files of /edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/
@@ -33,6 +34,7 @@ If *.po files are there,the below command will override the *.po files with the 
 
 4. Copy all the files from 'en' folder into 'as' folder
 ```````````````````````````````````````````````````````
+
 	cp -r en/* as/
 
 5. Update the .po files in the as/ directory for you translation strings
@@ -49,7 +51,8 @@ If *.po files are there,the below command will override the *.po files with the 
 6. Add the language into /edx/app/edxapp/edx-platform/conf/locale/config.yaml
 `````````````````````````````````````````````````````````````````````````````
 
-	- as  # Assames
+
+	 as  # Assames
 
 7. Add the language into /edx/app/edxapp/edx-platform/lms/envs/common.py
 `````````````````````````````````````````````````````````````````````````
@@ -67,20 +70,21 @@ If *.po files are there,the below command will override the *.po files with the 
 
 9. Generate the compiled files
 ```````````````````````````````
-		
-		i18n_tool generate
+
+	i18n_tool generate
 The above command will generate *.mo files
 
 10. Add "as" to your list of supported languages
 ````````````````````````````````````````````````
-	
+
 	Goto [IP]/admin/dark_lang/darklangconfig/
 	Click on the Add and edit button to add the language code.
 	Save it.
 	
 11. Sometimes the changes wount reflect so start the lms and cms:
 `````````````````````````````````````````````````````````````````
-  	cd /edx/app/edxapp/edx-platform
+
+	cd /edx/app/edxapp/edx-platform
   	sudo /edx/bin/supervisorctl -c /edx/etc/supervisord.conf restart edxapp:
   	
   
