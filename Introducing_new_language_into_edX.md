@@ -5,7 +5,7 @@ Considering creation of Assames language:
 
 1. create a python virtualenv and install all of the python requirements
 
-
+```
 	cd /edx/app/edxapp/edx-platform/
 	pip install --exists-action w -r requirements/edx/pre.txt
 	pip install --exists-action w -r requirements/edx/base.txt
@@ -14,7 +14,7 @@ Considering creation of Assames language:
 	pip install --exists-action w -r requirements/edx/github.txt
 	pip install --exists-action w -r requirements/edx/local.txt
 	pip install markey
-
+```
 
 2. Extract the .po source files
 ```````````````````````````````
