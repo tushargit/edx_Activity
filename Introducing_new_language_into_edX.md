@@ -19,13 +19,13 @@ Considering creation of Assames language:
 2)  Extract the .po source files
 
 Below command will extract all the strings from files(*.py,*.html) into *.po files of */edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/*
-	If *.po files are there,the below command will override the *.po files with the extra strings that are added(i.e. in *.py, *.html files ) and if there is no *.po files or you have deleted them then also it will create *.po files.
+If *.po files are there,the below command will override the *.po files with the extra strings that are added(i.e. in *.py, *.html files ) and if there is no *.po files or you have deleted them then it will create *.po files.
 
 ```
 	i18n_tool extract
 ```
 
-3) create an language code director
+3) create an language code directory
 
 considering *'as'* as the language code for Assames language
 
@@ -106,9 +106,8 @@ The above command will generate *.mo files
   	sudo /edx/bin/supervisorctl -c /edx/etc/supervisord.conf restart edxapp:
 ```
   	
-```ruby 
-Refresh the page to see the changes in the browser.There is a delay of 2.5 mins on the main page but on other pages it reflects.
-```
+
+**Refresh the page to see the changes in the browser.There is a delay of 2.5 mins on the main page but on other pages it reflects.**
 
   
 	
