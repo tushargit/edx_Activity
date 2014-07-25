@@ -18,8 +18,8 @@ Considering creation of Assames language:
 
 2. Extract the .po source files
 
-Below command will extract all the strings from files(*.py,*.html) into *.po files of /edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/
-If *.po files are there,the below command will override the *.po files with the extra strings that are added(i.e. in *.py, *.html files ) and if there is no *.po files or you have deleted them then also it will create *.po files.
+	Below command will extract all the strings from files(*.py,*.html) into *.po files of */edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/*
+	If *.po files are there,the below command will override the *.po files with the extra strings that are added(i.e. in *.py, *.html files ) and if there is no *.po files or you have deleted them then also it will create *.po files.
 
 ```
 	i18n_tool extract
@@ -53,7 +53,7 @@ considering *'as'* as the language code for Assames language
   	.....................
   	.....................
 ```
-  
+
 6. Add the language into /edx/app/edxapp/edx-platform/conf/locale/config.yaml
 
 
@@ -79,6 +79,7 @@ considering *'as'* as the language code for Assames language
 	AFTER: "Language: as\n”
 ```
 
+
 9. Generate the compiled files
 
 ```
@@ -86,6 +87,7 @@ considering *'as'* as the language code for Assames language
 	i18n_tool generate
 ```
 The above command will generate *.mo files
+
 
 10. Add "as" to your list of supported languages
 
@@ -95,7 +97,7 @@ The above command will generate *.mo files
 	Click on the Add and edit button to add the language code.
 	Save it.
 ```
-	
+
 11. Sometimes the changes may not reflect so start the lms and cms:
 
 ```
