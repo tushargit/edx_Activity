@@ -150,7 +150,4 @@ Edit and replace **'hidden'** to **'required'** for **'country'** field as given
  
 **NOTE:**
 
-
-**The  migrate command (sudo -u www-data /edx/bin/python.edxapp ./manage.py lms syncdb --migrate --settings aws) may not work so one can ** 
-
-**manually add the fields by using the 5th step,and after that the userdata can be inserted **
+**The migrate command (sudo -u www-data /edx/bin/python.edxapp ./manage.py lms syncdb --migrate --settings aws) may not work so one can manually add the fields by using the 5th step,andafter that the data can be inserted into the columns created**
