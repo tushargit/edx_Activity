@@ -18,7 +18,8 @@ Considering creation of Assames language:
 
 2)  Extract the .po source files
 
-Below command will extract all the strings from files( .py, .html) into .po files of  **/edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/**
+Below command will extract all the strings from files( .py, .html) into .po files of  **/edx/app/edxapp/edx-platform/conf/locale/en/LC_MESSAGES/**.
+
 If *.po files are there,the below command will override the *.po files with the extra strings that are added(i.e. in *.py, *.html files ) and if there is no *.po files or you have deleted them then it will create *.po files.
 
 ```
