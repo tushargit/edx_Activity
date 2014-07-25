@@ -72,7 +72,7 @@ considering **'as'** as the language code for Assames language
 ```
 
 
-8) Make changes to **django-partial.po**, **djangojs-partial.po**, **mako.po"" by replacing **'en'** to **'as'**
+8) Make changes to **django-partial.po**, **djangojs-partial.po**, **mako.po** by replacing **'en'** to **'as'**.
 
 ```
 
