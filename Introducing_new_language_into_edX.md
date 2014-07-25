@@ -34,7 +34,7 @@ considering **'as'** as the language code for Assames language
 	mkdir as/
 ```
 
-4) Copy all the files from **'en' ** folder into **'as'** folder
+4) Copy all the files from **'en'** folder into **'as'** folder
 
 
 ```
@@ -47,9 +47,9 @@ considering **'as'** as the language code for Assames language
 ```
 	.....................
   	.....................
-  	#: common/djangoapps/django_comment_common/models.py
-  	msgid "Moderator"
-  	msgstr "मॉडरेटर"
+  	#: lms/templates/register.html:250
+	msgid "Pincode"
+	msgstr "পিন কোড"
   	.....................
   	.....................
 ```
