@@ -28,7 +28,7 @@ Language Preference on home page (before login/authentication)
     try to get the prefered language for the user 
    
    ''' 
-    cur_lang_code = UserPreference.get_preference(request.POST.get('user'), LANGUAGE_KEY) 
+    cur_lang_code = UserPreference.get_preference(request.user, LANGUAGE_KEY) 
     if cur_lang_code: 
        '''
          if the user has a preference, get the name from the code 
