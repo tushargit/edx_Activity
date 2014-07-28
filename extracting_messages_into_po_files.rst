@@ -1,3 +1,5 @@
+ Extracting_messages_into_po_files/Creating_Po_files
+=======================================
 
 * sudo gedit  /edx/app/edxapp/edx-platform/lms/envs/common.py
            LANGUAGES = (
