@@ -27,13 +27,19 @@
 
 
    replace 'en' with 'language_code' from following place 
+   
    eg.
+   
                  makemessages = "django-admin.py makemessages -l en -v{}".format(args.verbose)
+                 
                   fixes ={
+                 
                               .............................
                               'Language': 'en',
                                ...........................
+                 
                               }
+                 
                   segmented_files = segment_pofiles("en")               
  
 
