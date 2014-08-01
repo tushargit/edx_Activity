@@ -5,7 +5,7 @@ Language Preference on home page (before login/authentication)
 
 *  After  changes your  index function will look like given below:
 ```
-   index(request, extra_context={}, user=AnonymousUser()): 
+   def index(request, extra_context={}, user=AnonymousUser()): 
     '''
     Render the edX main page. 
 
@@ -70,18 +70,18 @@ Language Preference on home page (before login/authentication)
 
 ```
 <%include file='modal/_modal-settings-language.html' /> 
-
+%if len(language_options) > 1: 
 <header class="global" aria-label="${_('Global Navigation')}"> 
         <nav><ol class="right nav-courseware"> 
     <li class="nav-courseware-02"> 
-	    %if len(language_options) > 1: 
+	    
 	   
 	    <%include file='dashboard/_dashboard_info_language.html' /> 
-	    %endif 
+	   
             </li> 
         </ol></nav> 
 </header>
- 
+  %endif 
 
  <script type="text/javascript"> 
   $(window).load(function() {$('#signup_action').trigger("click");}); 
