@@ -7,7 +7,8 @@ Reflecting changes of models.py in sql database(Creating table in mysql using mo
 * sudo -u www-data /edx/bin/python.edxapp ./manage.py lms schemamigration student --initial --settings aws 
 
 * sudo -u www-data /edx/bin/python.edxapp ./manage.py lms migrate student 0001_initial --fake --settings aws 
-* sudo gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/models.py  
+* sudo gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/models.py 
+
  paste code given below at end of page
 
 
@@ -26,6 +27,7 @@ class MoocPincode(models.Model):
 
 
 #mycode 
+
 ```
 
 
@@ -33,6 +35,7 @@ class MoocPincode(models.Model):
 
 
 * sudo -u www-data /edx/bin/python.edxapp ./manage.py lms schemamigration student --initial --settings aws 
+
  output of above command
 ```
 2014-08-06 08:46:59,056 INFO 15477 [dd.dogapi] dog_stats_api.py:66 - Initializing dog api to use statsd: localhost, 8125 
