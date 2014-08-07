@@ -4,7 +4,6 @@
 * sudo apt-­get upgrade ­-y
 * reboot
 * sudo apt-get install -y build-essential software-properties-common python-software-properties curl git-core libxml2-dev libxslt1-dev python-pip python-apt python-dev
-* wget https://bitbucket.org/pypa/setuptools/raw/0.8/ez_setup.py ­O ­ | sudo python
 * sudo pip install ­­--upgrade pip
 * sudo pip install ­­--upgrade virtualenv
 * cd /var/tmp
