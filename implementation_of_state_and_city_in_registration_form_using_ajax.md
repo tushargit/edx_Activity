@@ -1,7 +1,7 @@
 Adding state and city field in registration form using ajax
 ============================================================
 
-* Add following code to the models.py
+* sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/models.py
 ```
 class mooc_state(models.Model):      
 
@@ -61,7 +61,7 @@ class mooc_person(models.Model):
 
 ### To Populate data from database in state dropdown: ###
 
-*  Add state and city  in  the common.py  as foloowing
+*  Add state  in  the common.py  as following
 ```
     REGISTRATION_EXTRA_FIELDS = {
     'level_of_education': 'optional',
@@ -73,12 +73,10 @@ class mooc_person(models.Model):
     #'city': 'hidden',
     'country': 'hidden',
     'state':'required',
-    'city':'required',
-
 }
 ```
 
-* Edit register.html 
+* sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html 
 ```
 <!--##########  Added state dropdown  ############################### -->
 
@@ -206,7 +204,7 @@ def register_user(request, extra_context=None):
     return render_to_response('register.html', context)
 
 ```
-* Edit views.py for using city dropdownlist   
+* sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py for using city dropdownlist   
 ```
 
 changes 4: this is a new function caled by AJAX to acces states based on the selected state id.
