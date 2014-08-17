@@ -51,17 +51,17 @@ class mooc_person(models.Model):
 
 
 
-* sudo -u www-data /edx/bin/python.edxapp ./manage.py lms schemamigration student --initial --settings aws
+* **sudo -u www-data /edx/bin/python.edxapp ./manage.py lms schemamigration student --initial --settings aws**
 
-* sudo -u www-data /edx/bin/python.edxapp ./manage.py lms syncdb --all --settings aws
+* **sudo -u www-data /edx/bin/python.edxapp ./manage.py lms syncdb --all --settings aws**
 
-* sudo -u www-data /edx/bin/python.edxapp ./manage.py lms migrate --fake --settings aws
+* **sudo -u www-data /edx/bin/python.edxapp ./manage.py lms migrate --fake --settings aws**
 
-* Insert data in student_mooc_state and student_mooc_city table of edxapp database  
+* **Insert data in student_mooc_state and student_mooc_city table of edxapp database**  
 
 ### To Populate data from database in state dropdown: ###
 
-*  sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py and add state as following
+*  **sudo gedit /edx/app/edxapp/edx-platform/lms/envs/common.py and add state as following**
 ```
     REGISTRATION_EXTRA_FIELDS = {
     'level_of_education': 'optional',
@@ -76,7 +76,7 @@ class mooc_person(models.Model):
 }
 ```
 
-* sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html 
+* **sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html** 
 ```
 <!--##########  Added state dropdown  ############################### -->
 
@@ -107,7 +107,7 @@ class mooc_person(models.Model):
           % endif
 ```
 
-* sudo gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py as following
+* **sudo gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py as following**
 
 ```
 Change No 1:
@@ -204,7 +204,7 @@ def register_user(request, extra_context=None):
     return render_to_response('register.html', context)
 
 ```
-* sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py for using city dropdownlist   
+* **sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py for using city dropdownlist**   
 ```
 
 changes 4: this is a new function caled by AJAX to acces states based on the selected state id.
