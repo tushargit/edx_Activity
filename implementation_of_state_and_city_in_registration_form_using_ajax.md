@@ -3,7 +3,7 @@ Adding state and city field in registration form using ajax
 
 * **sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/models.py**
 ```
-class mooc_state(models.Model):      
+class Mooc_state(models.Model):      
 
       name=models.CharField(max_length=255,unique=True,db_index=True,null=False,default=None)
 
@@ -17,7 +17,7 @@ class mooc_state(models.Model):
 
 
 
-class mooc_city(models.Model):
+class Mooc_city(models.Model):
 
      
 
@@ -31,7 +31,7 @@ class mooc_city(models.Model):
 
           
 
-class mooc_person(models.Model):
+class Mooc_person(models.Model):
 
       user = models.OneToOneField(User,null=False,default=None)
 
@@ -111,12 +111,15 @@ class mooc_person(models.Model):
 
 ```
 Change No 1:
+import json
 from student.models import (
     Registration, UserProfile, PendingNameChange,
     PendingEmailChange, CourseEnrollment, unique_id_for_user,
     CourseEnrollmentAllowed, UserStanding, LoginFailures,        
 create_comments_service_user, PasswordHistory,Mooc_state,Mooc_city,Mooc_person 
 )
+
+
  Change NO 2:
    for field_name in required_post_vars: 
         if field_name in ('gender', 'level_of_education','state'): 
