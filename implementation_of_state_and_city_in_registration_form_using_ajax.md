@@ -23,7 +23,7 @@ class Mooc_city(models.Model):
 
       name= models.CharField(max_length=255,null=False,default=None)
 
-      state = models.ForeignKey(mooc_state)
+      state = models.ForeignKey(Mooc_state)
 
       def __unicode__(self):
 
@@ -35,9 +35,9 @@ class Mooc_person(models.Model):
 
       user = models.OneToOneField(User,null=False,default=None)
 
-      state = models.ForeignKey(mooc_state,default=None)
+      state = models.ForeignKey(Mooc_state,default=None)
 
-      city=models.ForeignKey(mooc_city,default=None)
+      city=models.ForeignKey(Mooc_city,default=None)
 
       pincode = models.IntegerField(max_length=25,default=None)
 
