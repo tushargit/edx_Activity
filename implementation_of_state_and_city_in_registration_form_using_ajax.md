@@ -3,6 +3,9 @@ Adding state and city field in registration form using ajax
 
 * **sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/models.py**
 ```
+....................
+....................
+
 class Mooc_state(models.Model):      
 
       name=models.CharField(max_length=255,unique=True,db_index=True,null=False,default=None)
@@ -44,12 +47,12 @@ class Mooc_person(models.Model):
       
       def __unicode__(self):
 
-          return self.user_id.username    
+          return self.user_id.username  
+         
+.......................
+.......................
 
 ```
-
-
-
 
 * **sudo -u www-data /edx/bin/python.edxapp ./manage.py lms schemamigration student --initial --settings aws**
 
@@ -59,7 +62,7 @@ class Mooc_person(models.Model):
 
 * **Insert data in student_mooc_state and student_mooc_city table of edxapp database**  
 
-### To create state , city and pincode fields in html
+### To create state , city and pincode fields in html###
 
 * **sudo gedit  /edx/app/edxapp/edx-platform/lms/templates/register.html** 
 ```
@@ -338,6 +341,21 @@ def city_ajax(request):
     return HttpResponse(json.dumps(data), mimetype="application/json")
 
 ```
+
+*  **sudo  gedit /edx/app/edxapp/edx-platform/lms/urls.py for creating urls to city_ajax function**
+
+```
+.....................
+.....................
+
+    url(r'^register$', 'student.views.register_user', name="register_user"),
+    url(r'^city_ajax$', 'student.views.city_ajax', name="city_ajax"), ##-- handeled the ajax request sent on the selection of State
+    url(r'^admin_dashboard$', 'dashboard.views.dashboard'),
+
+.........................
+.........................
+```
+
 *  **sudo gedit  /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py  for inserting state ,city and pincode in sql database**
 ```
 change NO: 2 change the _do_create_account function
