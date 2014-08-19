@@ -55,6 +55,14 @@ class Mooc_person(models.Model):
 ```
 
 * **sudo -u www-data /edx/bin/python.edxapp ./manage.py lms schemamigration student --initial --settings aws**
+```
+If error
+IOError: [Errno 13] Permission denied: '/edx/app/edxapp/edx-platform/common/djangoapps/student/migrations/0038_initial.py'
+
+TSolution:
+** sudo chmod 777 -R /edx/app/edxapp/edx-platform/djangoapps/student** 
+
+ ```
 
 * **sudo -u www-data /edx/bin/python.edxapp ./manage.py lms syncdb --all --settings aws**
 
