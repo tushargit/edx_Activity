@@ -1,3 +1,7 @@
+Adding Extra-fields(City ,State and Pincode) in CMS  Registration form
+=======================================================================
+### First make changes in LMS registartion form then edit CMS registartion form because some settings are common with lms ### 
+
 * **sudo gedit /edx/app/edxapp/edx-platform/cms/templates/register.html**
 
 ```
