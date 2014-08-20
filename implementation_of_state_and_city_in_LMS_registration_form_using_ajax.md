@@ -157,7 +157,7 @@ create_comments_service_user, PasswordHistory,Mooc_state,Mooc_city,Mooc_person
 )
 
 
- Change NO 2: change in  _do_create_account(post_vars):
+ Change NO 2: change in create_account(post_vars):
    for field_name in required_post_vars: 
         if field_name in ('gender', 'level_of_education','state','city','pincode'): 
             min_length = 1 
