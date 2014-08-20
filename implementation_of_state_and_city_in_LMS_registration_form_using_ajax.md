@@ -159,7 +159,7 @@ create_comments_service_user, PasswordHistory,Mooc_state,Mooc_city,Mooc_person
 
  Change NO 2: change in  _do_create_account(post_vars):
    for field_name in required_post_vars: 
-        if field_name in ('gender', 'level_of_education','state','city'): 
+        if field_name in ('gender', 'level_of_education','state','city','pincode'): 
             min_length = 1 
         else: 
             min_length = 2 
@@ -183,6 +183,16 @@ create_comments_service_user, PasswordHistory,Mooc_state,Mooc_city,Mooc_person
 
 
             }
+            js['value'] = error_str[field_name]
+            js['field'] = field_name
+            return JsonResponse(js, status=400) 
+	else:
+		if len(post_vars['pincode']) != 6 or type(post_vars['pincode']) != int:
+	   		error_str = {'pincode': _('pincode should be of length 6 and of integer type'),}
+           		js['value'] = error_str['pincode']
+           		js['field'] = 'pincode'
+           		return JsonResponse(js, status=400)
+
 ```
 ### To  fetch state and city data from database and use in form ###
 
