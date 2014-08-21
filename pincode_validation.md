@@ -44,7 +44,7 @@ def create_account(request, post_override=None):
  .............
  .............
  for field_name in required_post_vars:
-       if field_name in ('gender', 'level_of_education','state','city','pincode'):
+      if field_name in ('gender', 'level_of_education','state','city','pincode'):
 		        min_length = 1
 	else:
 		        min_length = 2
