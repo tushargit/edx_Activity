@@ -46,7 +46,7 @@ def create_account(request, post_override=None):
  for field_name in required_post_vars:
         if field_name in ('gender', 'level_of_education','state','city','pincode'):
 		        min_length = 1
-	else:
+		else:
 		        min_length = 2
 
 	if len(post_vars[field_name]) < min_length:
@@ -79,9 +79,9 @@ def create_account(request, post_override=None):
           	return JsonResponse(js, status=400)
   ...............
   ...............
-     	try:
+     try:
         	validate_integer(post_vars['pincode'])
-     	except ValidationError:
+     except ValidationError:
         	js['value'] = _("Enter a valid integer.").format(field=a)
         	js['field'] = 'integer'
         	return JsonResponse(js, status=400)
