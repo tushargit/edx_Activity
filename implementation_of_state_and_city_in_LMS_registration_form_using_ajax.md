@@ -142,7 +142,7 @@ REGISTRATION_EXTRA_FIELDS = {
 }
 
 ```
-### To validate state,city and pincode 
+### To validate state,city
 
 * **sudo gedit /edx/app/edxapp/edx-platform/common/djangoapps/student/views.py as following**
 
@@ -159,7 +159,7 @@ create_comments_service_user, PasswordHistory,Mooc_state,Mooc_city,Mooc_person
 
  Change NO 2: change in create_account(post_vars):
    for field_name in required_post_vars: 
-        if field_name in ('gender', 'level_of_education','state','city','pincode'): 
+        if field_name in ('gender', 'level_of_education','state','city'): 
             min_length = 1 
         else: 
             min_length = 2 
@@ -178,21 +178,13 @@ create_comments_service_user, PasswordHistory,Mooc_state,Mooc_city,Mooc_person
                 'goals': _('A description of your goals is required'), 
                 'city': _('A city is required'),                         
                 'country': _('A country is required'),
-                'state':_('State is required'),                          
-                'pincode':_('Pincode is required')
+                'state':_('State is required'),
 
 
             }
             js['value'] = error_str[field_name]
             js['field'] = field_name
             return JsonResponse(js, status=400) 
-	else:
-		if len(post_vars['pincode']) != 6 or type(post_vars['pincode']) != int:
-	   		error_str = {'pincode': _('pincode should be of length 6 and of integer type'),}
-           		js['value'] = error_str['pincode']
-           		js['field'] = 'pincode'
-           		return JsonResponse(js, status=400)
-
 ```
 ### To  fetch state and city data from database and use in form ###
 
