@@ -64,9 +64,9 @@ def create_account(request, post_override=None):
                 'mailing_address': _('Your mailing address is required'),
                 'goals': _('A description of your goals is required'),
                 'city': _('A city is required'),
-			'state': _('A state is required'),
+				'state': _('A state is required'),
                 'country': _('A country is required'),
-			'pincode': _('Pincode is required'),
+				'pincode': _('Pincode is required'),
 		            }
            js['value'] = error_str[field_name]
            js['field'] = field_name
