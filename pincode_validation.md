@@ -46,11 +46,10 @@ def create_account(request, post_override=None):
  for field_name in required_post_vars:
         if field_name in ('gender', 'level_of_education','state','city','pincode'):
 		        min_length = 1
-	      else:
+	else:
 		        min_length = 2
 
-	      if len(post_vars[field_name]) < min_length:
-	    
+	if len(post_vars[field_name]) < min_length:
             error_str = {
                 'username': _('Username must be minimum of two characters long'),
                 'email': _('A properly formatted e-mail is required'),
@@ -72,20 +71,20 @@ def create_account(request, post_override=None):
            js['field'] = field_name
            return JsonResponse(js, status=400) 
       
-      max_length = 6
-      if field_name in ('pincode') and len(post_vars[field_name]) != max_length:
-		      error_str = {'pincode': _('pincode should be of length 6 and of integer type'),}
+      	max_length = 6
+	if field_name in ('pincode') and len(post_vars[field_name]) != max_length:
+		error_str = {'pincode': _('pincode should be of length 6 and of integer type'),}
         	js['value'] = error_str['pincode']
         	js['field'] = 'pincode'
-          return JsonResponse(js, status=400)
+          	return JsonResponse(js, status=400)
   ...............
   ...............
-     try:
-        validate_integer(post_vars['pincode'])
-     except ValidationError:
-        js['value'] = _("Enter a valid integer.").format(field=a)
-        js['field'] = 'integer'
-        return JsonResponse(js, status=400)
+     	try:
+        	validate_integer(post_vars['pincode'])
+     	except ValidationError:
+        	js['value'] = _("Enter a valid integer.").format(field=a)
+        	js['field'] = 'integer'
+        	return JsonResponse(js, status=400)
 
 ```
 
