@@ -14,3 +14,6 @@ This repository contains edX activities:
 
 `Introducing new language into edx
 <https://github.com/MitaliNayak/edx_Activity/blob/master/Introducing_new_language_into_edX.md>`_
+
+`Pincode Validation
+<https://github.com/tushargit/edx_Activity/blob/master/pincode_validation.md>`_
