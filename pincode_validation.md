@@ -71,7 +71,7 @@ def create_account(request, post_override=None):
            js['field'] = field_name
            return JsonResponse(js, status=400) 
       
-      max_length = 6
+     max_length = 6
 	if field_name in ('pincode') and len(post_vars[field_name]) != max_length:
 		error_str = {'pincode': _('pincode should be of length 6 and of integer type'),}
         	js['value'] = error_str['pincode']
