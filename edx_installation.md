@@ -11,7 +11,7 @@
 * cd /var/tmp/configuration
 * sudo pip install ­-r requirements.txt
 * cd /var/tmp/configuration/playbooks
-* sudo ansible-­playbook ­-c local ./edx_sandbox.yml ­-i "localhost,*
+*  sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost,"
 
   OR
 
