@@ -402,3 +402,58 @@ sudo apt-get purge mongodb-10gen
 sudo apt-get autoremove
 
 
+###13)Error in edxapp  gather assets
+```
+TASK: [edxapp | gather  static assets with rake] ******************************
+failed: [localhost] => (item=lms) => {"changed": true, "cmd": "SERVICE_VARIANT=lms rake lms:gather_assets:aws ", "delta": "0:00:00.099276", "end": "2014-08-07 07:19:47.397273", "item": "lms", "rc": 1, "start": "2014-08-07 07:19:47.297997"}
+stderr: rake aborted!
+No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+
+(See full trace by running task with --trace)
+failed: [localhost] => (item=cms) => {"changed": true, "cmd": "SERVICE_VARIANT=cms rake cms:gather_assets:aws ", "delta": "0:00:00.078862", "end": "2014-08-07 07:19:47.631337", "item": "cms", "rc": 1, "start": "2014-08-07 07:19:47.552475"}
+stderr: rake aborted!
+No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+```
+
+**Sol**
+
+sudo gedit /var/tmp/configuration/playbooks/roles/edxapp/tasks/service_variant_config.yml
+
+** and relace **
+
+
+# Gather assets using rake if possible
+
+- name: gather {{ item }} static assets with rake
+  shell: >
+    SERVICE_VARIANT={{ item }} rake {{ item }}:gather_assets:aws
+    executable=/bin/bash
+    chdir={{ edxapp_code_dir }}
+  sudo_user: "{{ edxapp_user }}"
+  when: celery_worker is not defined and not devstack and item != "lms-preview"
+  with_items: service_variants_enabled
+  notify:
+  - "restart edxapp"
+  - "restart edxapp_workers"
+  environment: "{{ edxapp_environment }}"
+
+
+
+**with **
+  
+# Gather assets using paver if possible
+- name: gather {{ item }} static assets with paver
+shell: >
+SERVICE_VARIANT={{ item }} paver update_assets {{ item }} --settings=aws
+executable=/bin/bash
+chdir={{ edxapp_code_dir }}
+sudo_user: "{{ edxapp_user }}"
+when: celery_worker is not defined and not devstack and item != "lms-preview"
+with_items: service_variants_enabled
+notify:
+- "restart edxapp"
+- "restart edxapp_workers"
+environment: "{{ edxapp_environment }}"
+
+
+
