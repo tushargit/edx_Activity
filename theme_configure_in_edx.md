@@ -46,5 +46,10 @@ $video-thumb-url: '../themes/THEMENAME/images/image2.png';
 * source /edx/app/edxapp/edxapp_env 
 
 * sudo -u edxapp -E PATH="/edx/app/edxapp/venvs/edxapp/bin:/edx/app/edxapp/edx-platform/bin:/edx/app/edxapp/.rbenv/bin:/edx/app/edxapp/.rbenv/shims:/edx/app/edxapp/.gem/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" SERVICE_VARIANT=lms /edx/app/edxapp/edx-platform/bin/rake lms:gather_assets:aws 
+ 
+** OR **
+
+ paver update_assets lms --settings=aws
+
 
 * sudo chmod 777 -R /edx/var/edxapp/staticfiles/themes/
