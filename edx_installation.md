@@ -419,8 +419,8 @@ No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
 
 sudo gedit /var/tmp/configuration/playbooks/roles/edxapp/tasks/service_variant_config.yml
 
-** and relace **
-
+**and relace**
+```
 
 # Gather assets using rake if possible
 
@@ -436,11 +436,11 @@ sudo gedit /var/tmp/configuration/playbooks/roles/edxapp/tasks/service_variant_c
   - "restart edxapp"
   - "restart edxapp_workers"
   environment: "{{ edxapp_environment }}"
+```
 
 
-
-**with **
-  
+**with**
+  ```
 # Gather assets using paver if possible
 - name: gather {{ item }} static assets with paver
 shell: >
@@ -454,6 +454,21 @@ notify:
 - "restart edxapp"
 - "restart edxapp_workers"
 environment: "{{ edxapp_environment }}"
+
+```
+###14)Error in Task[discern|install ease python package]
+ ImportError: No module named numpy.distutils.core #18 
+ 
+  File "setup.py", line 152, in <module>
+    setup_package()
+  File "setup.py", line 144, in setup_package
+    from numpy.distutils.core import setup
+ImportError: No module named numpy.distutils.core
+
+**Sol**
+sudo  pip install numpy==1.6.2
+
+
 
 
 
