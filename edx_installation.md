@@ -466,6 +466,7 @@ environment: "{{ edxapp_environment }}"
 ImportError: No module named numpy.distutils.core
 
 **Sol**
+
 sudo  pip install numpy==1.6.2
 
 
