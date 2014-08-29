@@ -489,7 +489,7 @@ sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platfor
 
 
 #Note:
-After Update from above lms and cms can access by following url:
+After Update from above command ,lms and cms can access by following url:
 
 For LMS: http://localhost:18000/
 For CMS:http://localhost:18010/
