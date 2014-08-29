@@ -481,8 +481,11 @@ FATAL: all hosts have already failed -- aborting
 apparmor its installed, where that file comes from ?
 
 **Sol**
+
 source /edx/app/edx_ansible/venvs/edx_ansible/bin/activate
+
 cd /edx/app/edx_ansible/edx_ansible/playbooks/edx-east
+
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
 
