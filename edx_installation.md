@@ -469,6 +469,21 @@ ImportError: No module named numpy.distutils.core
 
 sudo  pip install numpy==1.6.2
 
+** Error on sudo /edx/bin/update edx-platform master **
+
+###15) TASK: [edxapp | code sandbox | put sandbox apparmor profile in complain mode] 
+failed: [localhost] => {"changed": true, "cmd": ["/usr/sbin/aa-complain", "/etc/apparmor.d/code.sandbox"], "delta": "0:00:00.189952", "end": "2014-06-09 12:44:21.808579", "item": "", "rc": 1, "start": "2014-06-09 12:44:21.618627"}
+stdout: /etc/apparmor.d/code.sandbox does not exist, please double-check the path.
+
+FATAL: all hosts have already failed -- aborting
+
+
+apparmor its installed, where that file comes from ?
+
+**Sol**
+source /edx/app/edx_ansible/venvs/edx_ansible/bin/activate
+cd /edx/app/edx_ansible/edx_ansible/playbooks/edx-east
+sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
 
 
