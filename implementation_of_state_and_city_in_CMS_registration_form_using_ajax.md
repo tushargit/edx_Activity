@@ -144,6 +144,7 @@ def signup(request):
 
 ...............................
 ...............................
+```
 
 * **sudo gedit /edx/app/edxapp/edx-platform/cms/djangoapps/contentstore/views/public.py**
 * **sudo gedit /edx/app/edxapp/edx-platform/cms/urls.py**
