@@ -486,6 +486,42 @@ source /edx/app/edx_ansible/venvs/edx_ansible/bin/activate
 
 cd /edx/app/edx_ansible/edx_ansible/playbooks/edx-east
 
+
+###16) TASK: [common | Install python-pycurl] 
+failed: [localhost] => {"failed": true, "item": "", "parsed": false}
+invalid output was: SUDO-SUCCESS-carjtxxbnpiagqxqsigetrqpnhgptftr
+Traceback (most recent call last):
+  File "/home/tushar/.ansible/tmp/ansible-1431511340.3-114824604994462/apt", line 1464, in <module>
+    main()
+  File "/home/tushar/.ansible/tmp/ansible-1431511340.3-114824604994462/apt", line 404, in main
+    cache.update()
+  File "/usr/lib/python2.7/dist-packages/apt/deprecation.py", line 98, in deprecated_function
+    return func(*args, **kwds)
+  File "/usr/lib/python2.7/dist-packages/apt/cache.py", line 441, in update
+    raise FetchFailedException(e)
+apt.cache.FetchFailedException: W:Failed to fetch http://ppa.launchpad.net/webupd8team/jupiter/ubuntu/dists/oneiric/main/source/Sources  404  Not Found
+
+, W:Failed to fetch http://ppa.launchpad.net/ferramroberto/java/ubuntu/dists/precise/main/source/Sources  404  Not Found
+, W:Failed to fetch http://ppa.launchpad.net/ferramroberto/java/ubuntu/dists/precise/main/binary-amd64/Packages  404  Not Found
+, W:Failed to fetch http://ppa.launchpad.net/ferramroberto/java/ubuntu/dists/precise/main/binary-i386/Packages  404  Not Found
+, W:Failed to fetch http://ftp.iitm.ac.in/cran/bin/linux/ubuntu/lucid/Sources  404  Not Found
+, W:Failed to fetch http://ftp.iitm.ac.in/cran/bin/linux/ubuntu/lucid/Packages  404  Not Found
+, E:Some index files failed to download. They have been ignored, or old ones used instead.
+
+
+FATAL: all hosts have already failed -- aborting
+
+
+**Sol**
+
+sudo apt-get install ppa-purge
+sudo ppa-purge ppa:ferramroberto/java
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+
+
+
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
 
