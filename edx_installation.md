@@ -515,9 +515,11 @@ FATAL: all hosts have already failed -- aborting
 **Sol**
 
 sudo apt-get install ppa-purge
+
 sudo ppa-purge ppa:ferramroberto/java
 
 sudo add-apt-repository ppa:webupd8team/java
+
 sudo apt-get update
 
 
@@ -545,11 +547,17 @@ msg: 'apt-get install 'python-pip' ' failed: dpkg: error: failed to open package
 E: Sub-process /usr/bin/dpkg returned an error code (
 **Sol**
 sudo mkdir -p /var/lib/dpkg/{updates,alternatives,info,parts,triggers}
+
 sudo mkdir -p /var/lib/dpkg/avalable
+
 sudo killall apt* software-center* dpkg sudo apt-get clean sudo apt-get update sudo apt-get purge wine1.4 ia32-libs-multiarch sudo apt-get upgrade
+
 sudo apt-get update
+
 sudo dpkg --clear-avail
+
 sudo cp /var/lib/dpkg/available-old /var/lib/dpkg/available
+
 sudo apt-get update
 
 
