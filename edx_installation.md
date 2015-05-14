@@ -487,7 +487,9 @@ source /edx/app/edx_ansible/venvs/edx_ansible/bin/activate
 cd /edx/app/edx_ansible/edx_ansible/playbooks/edx-east
 
 
-###16) TASK: [common | Install python-pycurl] 
+###16)Error in fetching  ppa Launchpad
+```
+TASK: [common | Install python-pycurl] 
 failed: [localhost] => {"failed": true, "item": "", "parsed": false}
 invalid output was: SUDO-SUCCESS-carjtxxbnpiagqxqsigetrqpnhgptftr
 Traceback (most recent call last):
@@ -510,7 +512,7 @@ apt.cache.FetchFailedException: W:Failed to fetch http://ppa.launchpad.net/webup
 
 
 FATAL: all hosts have already failed -- aborting
-
+```
 
 **Sol**
 
@@ -529,10 +531,12 @@ sudo apt-get update
 
 
 
-###17)TASK: [common | Install role-independent useful system packages] ************** 
+###17)Error in update (dpkg: error:failed to open package info)
+```
+TASK: [common | Install role-independent useful system packages] ************** 
 failed: [localhost] => {"failed": true, "item": ""}
 stderr: dpkg: error: failed to open package info file `/var/lib/dpkg/available' for reading: No such file or directory
-```E: Sub-process /usr/bin/dpkg returned an error code (2)
+E: Sub-process /usr/bin/dpkg returned an error code (2)
 
 stdout: Reading package lists...
 Building dependency tree...
