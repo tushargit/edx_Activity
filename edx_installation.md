@@ -567,7 +567,21 @@ sudo cp /var/lib/dpkg/available-old /var/lib/dpkg/available
 
 sudo apt-get update
 
+###18)Error in update supervisor configuration
+```
+TASK: [supervisor | update supervisor configuration] ************************** 
+failed: [localhost] => {"changed": true, "cmd": "/edx/app/devpi/venvs/supervisor/bin/supervisorctl -c /edx/app/devpi/supervisor/supervisord.conf update ", "delta": "0:00:00.127061", "end": "2015-05-14 11:53:09.898837", "item": "", "rc": 2, "start": "2015-05-14 11:53:09.771776", "stdout_lines": ["error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 224"]}
+stdout: error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 224
 
+```
+**Sol**
+sudo service nginx stop
+
+sudo service supervisor stop
+
+sudo service supervisor.devpi stop
+
+sudo pkill -u www-data
 
 
 
