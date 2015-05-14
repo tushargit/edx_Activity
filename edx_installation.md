@@ -532,7 +532,7 @@ sudo apt-get update
 ###17)TASK: [common | Install role-independent useful system packages] ************** 
 failed: [localhost] => {"failed": true, "item": ""}
 stderr: dpkg: error: failed to open package info file `/var/lib/dpkg/available' for reading: No such file or directory
-E: Sub-process /usr/bin/dpkg returned an error code (2)
+```E: Sub-process /usr/bin/dpkg returned an error code (2)
 
 stdout: Reading package lists...
 Building dependency tree...
@@ -544,7 +544,8 @@ Need to get 0 B/95.1 kB of archives.
 After this operation, 399 kB of additional disk space will be used.
 
 msg: 'apt-get install 'python-pip' ' failed: dpkg: error: failed to open package info file `/var/lib/dpkg/available' for reading: No such file or directory
-E: Sub-process /usr/bin/dpkg returned an error code (
+E: Sub-process /usr/bin/dpkg returned an error code 
+```
 **Sol**
 sudo mkdir -p /var/lib/dpkg/{updates,alternatives,info,parts,triggers}
 
