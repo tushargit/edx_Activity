@@ -575,6 +575,7 @@ stdout: error: <class 'socket.error'>, [Errno 2] No such file or directory: file
 
 ```
 **Sol**
+
 sudo service nginx stop
 
 sudo service supervisor stop
