@@ -522,6 +522,41 @@ sudo apt-get update
 
 
 
+
+
+
+
+
+###17)TASK: [common | Install role-independent useful system packages] ************** 
+failed: [localhost] => {"failed": true, "item": ""}
+stderr: dpkg: error: failed to open package info file `/var/lib/dpkg/available' for reading: No such file or directory
+E: Sub-process /usr/bin/dpkg returned an error code (2)
+
+stdout: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  python-pip
+0 upgraded, 1 newly installed, 0 to remove and 197 not upgraded.
+Need to get 0 B/95.1 kB of archives.
+After this operation, 399 kB of additional disk space will be used.
+
+msg: 'apt-get install 'python-pip' ' failed: dpkg: error: failed to open package info file `/var/lib/dpkg/available' for reading: No such file or directory
+E: Sub-process /usr/bin/dpkg returned an error code (
+**Sol**
+sudo mkdir -p /var/lib/dpkg/{updates,alternatives,info,parts,triggers}
+sudo mkdir -p /var/lib/dpkg/avalable
+sudo killall apt* software-center* dpkg sudo apt-get clean sudo apt-get update sudo apt-get purge wine1.4 ia32-libs-multiarch sudo apt-get upgrade
+sudo apt-get update
+sudo dpkg --clear-avail
+sudo cp /var/lib/dpkg/available-old /var/lib/dpkg/available
+sudo apt-get update
+
+
+
+
+
+
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
 
