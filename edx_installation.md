@@ -23,6 +23,8 @@
 
 ```
 TASK [edxlocal | create a database for edxapp]*****************************
+
+msg: unable to connect, check login_user and login_password are correct, or alternatively check ~/.my.cnf contains credentials
 ```
 
 
