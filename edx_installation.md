@@ -618,6 +618,7 @@ Setting up elasticsearch (0.90.2) ...
 
 sudo dpkg --configure -a
 [sudo] password for user: 
+```
 Setting up elasticsearch (0.90.2) ...
 
 Configuration file `/etc/init.d/elasticsearch'
@@ -629,7 +630,9 @@ Configuration file `/etc/init.d/elasticsearch'
       D     : show the differences between the versions
       Z     : start a shell to examine the situation
  The default action is to keep your current version.
+ ```
 *** elasticsearch (Y/I/N/O/D/Z) [default=N] ? Y
+````
 Installing new version of config file /etc/init.d/elasticsearch ...
 
 Configuration file `/etc/default/elasticsearch'
@@ -642,8 +645,9 @@ Configuration file `/etc/default/elasticsearch'
       Z     : start a shell to examine the situation
  The default action is to keep your current version.
 *** elasticsearch (Y/I/N/O/D/Z) [default=N] ? Y
+```
 Installing new version of config file /etc/default/elasticsearch ...
-
+````
 Configuration file `/etc/elasticsearch/logging.yml'
  ==> File on system created by you or by a script.
  ==> File also in package provided by package maintainer.
@@ -653,7 +657,9 @@ Configuration file `/etc/elasticsearch/logging.yml'
       D     : show the differences between the versions
       Z     : start a shell to examine the situation
  The default action is to keep your current version.
+ ````
 *** logging.yml (Y/I/N/O/D/Z) [default=N] ? Y
+```
 Installing new version of config file /etc/elasticsearch/logging.yml ...
 
 Configuration file `/etc/elasticsearch/elasticsearch.yml'
@@ -665,11 +671,13 @@ Configuration file `/etc/elasticsearch/elasticsearch.yml'
       D     : show the differences between the versions
       Z     : start a shell to examine the situation
  The default action is to keep your current version.
+ ```
 *** elasticsearch.yml (Y/I/N/O/D/Z) [default=N] ? Y
+```
 Installing new version of config file /etc/elasticsearch/elasticsearch.yml ...
  * Starting ElasticSearch Server                          
 
-
+```
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
 
