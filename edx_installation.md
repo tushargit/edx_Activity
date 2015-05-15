@@ -644,10 +644,11 @@ Configuration file `/etc/default/elasticsearch'
       D     : show the differences between the versions
       Z     : start a shell to examine the situation
  The default action is to keep your current version.
+```
 *** elasticsearch (Y/I/N/O/D/Z) [default=N] ? Y
 ```
 Installing new version of config file /etc/default/elasticsearch ...
-````
+
 Configuration file `/etc/elasticsearch/logging.yml'
  ==> File on system created by you or by a script.
  ==> File also in package provided by package maintainer.
