@@ -587,6 +587,89 @@ sudo pkill -u www-data
 
 
 
+###1)Error in Elasticsearch (link creation for elasticsearch server restart)
+```
+..........................................................
+..........................................................
+dpkg: warning: files list file for package `libexempi3' missing, assuming package has no files currently installed.
+
+dpkg: warning: files list file for package `libgwibber-gtk2' missing, assuming package has no files currently installed.
+
+Configuration file `/etc/init.d/elasticsearch'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** elasticsearch (Y/I/N/O/D/Z) [default=N] ? dpkg: error processing elasticsearch (--install):
+ EOF on stdin at conffile prompt
+Errors were encountered while processing:
+ elasticsearch
+stdout: Selecting previously unselected package elasticsearch.
+(Reading database ... 1085 files and directories currently installed.)
+Unpacking elasticsearch (from .../tmp/elasticsearch-0.90.2.deb) ...
+Setting up elasticsearch (0.90.2) ...
+
+````
+**Sol**
+
+sudo dpkg --configure -a
+[sudo] password for user: 
+Setting up elasticsearch (0.90.2) ...
+
+Configuration file `/etc/init.d/elasticsearch'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** elasticsearch (Y/I/N/O/D/Z) [default=N] ? Y
+Installing new version of config file /etc/init.d/elasticsearch ...
+
+Configuration file `/etc/default/elasticsearch'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** elasticsearch (Y/I/N/O/D/Z) [default=N] ? Y
+Installing new version of config file /etc/default/elasticsearch ...
+
+Configuration file `/etc/elasticsearch/logging.yml'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** logging.yml (Y/I/N/O/D/Z) [default=N] ? Y
+Installing new version of config file /etc/elasticsearch/logging.yml ...
+
+Configuration file `/etc/elasticsearch/elasticsearch.yml'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** elasticsearch.yml (Y/I/N/O/D/Z) [default=N] ? Y
+Installing new version of config file /etc/elasticsearch/elasticsearch.yml ...
+ * Starting ElasticSearch Server                          
+
+
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
 
