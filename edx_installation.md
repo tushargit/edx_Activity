@@ -703,6 +703,7 @@ FATAL: all hosts have already failed -- aborting
 **Sol*
 Change mysql username password setting in following way:
 On MySQL 
+
 mysql> update user set password=PASSWORD('') where User='root';
 
 mysql> flush privileges;
