@@ -587,7 +587,7 @@ sudo pkill -u www-data
 
 
 
-###1)Error in Elasticsearch (link creation for elasticsearch server restart)
+###19)Error in Elasticsearch (link creation for elasticsearch server restart)
 ```
 ..........................................................
 ..........................................................
@@ -679,7 +679,37 @@ Installing new version of config file /etc/elasticsearch/elasticsearch.yml ...
  * Starting ElasticSearch Server                          
 
 ```
+###20)Error in sync and migrate
+
+```
+TASK: [edxapp | syncdb and migrate] *******************************************
+failed: [localhost] => {"changed": true, "cmd": "SERVICE_VARIANT=lms /edx/app/edxapp/venvs/edxapp/bin/django-admin.py syncdb --migrate --noinput --settings=lms.envs.aws --pythonpath=/edx/app/edxapp/edx-platform ", "delta": "0:00:04.478969", "end": "2015-05-18 16:10:49.164643", "item": "", "rc": 1, "start": "2015-05-18 16:10:44.685674"}
+stderr: Traceback (most recent call last):
+  File "/edx/app/edxapp/venvs/edxapp/bin/django-admin.py", line 5, in <module>
+    management.execute_from_command_line()
+  .................................................................................
+  .................................................................................
+  .................................................................................
+  .................................................................................
+_mysql_exceptions.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+
+FATAL: all hosts have already failed -- aborting
+
+
+
+
+
+```
+**Sol*
+Change mysql username password setting in following way:
+On MySQL 
+mysql> update user set password=PASSWORD('') where User='root';
+
+mysql> flush privileges;
+
+
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
+
 
 
 
