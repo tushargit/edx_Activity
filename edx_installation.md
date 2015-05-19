@@ -770,6 +770,60 @@ freetype2 is there instead of freetype so, make symlink..
 
 sudo ln -s /usr/include/freetype2 /usr/include/freetype
 
+###22)Error in installing  python post-post requirements
+```
+...............................................................................
+
+................................................................................
+stderr: /bin/sh: 1: /edx/app/edxapp/venvs/edxapp/bin/pip: not found
+................................................................................
+
+................................................................................
+```
+**Sol**
+
+sudo gedit /var/tmp/iitbx-configuration/playbooks/roles/edxapp/tasks/deploy.yml
+replace code
+```
+# Install the final python modules into {{ edxapp_venv_dir }}
+- name : install python post-post requirements
+  # Need to use shell rather than pip so that we can maintain the context of our current working directory; some
+  # requirements are pathed relative to the edx-platform repo. Using the pip from inside the virtual environment implicitly
+  # installs everything into that virtual environment.
+  shell: >
+    {{ edxapp_venv_dir }}/bin/pip install -i {{ edxapp_pypi_local_mirror }} --exists-action w --use-mirrors -r {{ item }}
+    chdir={{ edxapp_code_dir }}
+  with_items:
+  - "{{ repo_requirements_file }}"
+  - "{{ github_requirements_file }}"
+  - "{{ local_requirements_file }}"
+  sudo_user: "{{ edxapp_user }}"
+  notify:
+  - "restart edxapp"
+  - "restart edxapp_workers"
+  ```
+  
+ with
+  ```
+# Install the final python modules into {{ edxapp_venv_dir }}
+- name : install python post-post requirements
+  # Need to use shell rather than pip so that we can maintain the context of our current working directory; some
+  # requirements are pathed relative to the edx-platform repo. Using the pip from inside the virtual environment implicitly
+  # installs everything into that virtual environment.
+  shell: >
+    {{ edxapp_venv_dir }}/bin/pip install -i {{ edxapp_pypi_local_mirror }} --exists-action w --use-mirrors -r {{ item }}
+    chdir={{ edxapp_code_dir }}
+  with_items:
+  - "{{ repo_requirements_file }}"
+  - "{{ github_requirements_file }}"
+  - "{{ local_requirements_file }}"
+  sudo_user: "{{ edxapp_user }}"
+  notify:
+  - "restart edxapp"
+  - "restart edxapp_workers"
+  when: not inst.stat.exists or new.stat.md5 != inst.stat.md5
+
+```
 
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
