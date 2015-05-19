@@ -710,10 +710,11 @@ mysql> update user set password=PASSWORD('') where User='root';
 mysql> flush privileges;
 
 
+
+
+
+
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
-
-
-
 
 
 #Note:
