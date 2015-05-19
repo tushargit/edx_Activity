@@ -700,7 +700,8 @@ FATAL: all hosts have already failed -- aborting
 
 
 ```
-**Sol*
+**Sol**
+
 Change mysql username password setting in following way:
 On MySQL 
 
