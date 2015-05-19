@@ -710,8 +710,65 @@ mysql> update user set password=PASSWORD('') where User='root';
 mysql> flush privileges;
 
 
+###21)TASK: [edxapp | install python base-requirements] 
+
+```
+"failed: [localhost] => {"changed": true, "cmd": "/edx/app/edxapp/venvs/edxapp/bin/pip install -i https://pypi.python.org/simple --exists-action w --use-mirrors -r /edx/app/edxapp/edx-platform/requirements/edx/base.txt ", "delta": "0:00:44.433877", "end": "2014-09-30 07:08:45.484337", "item": "", "rc": 1, "start": "2014-09-30 07:08:01.050460"}
+stdout: --use-mirrors has been deprecated and will be removed in the future. Explicit uses of --index-url and/or --extra-index-url is suggested.
+................................................................................................
+
+................................................................................................
 
 
+x86_64-linux-gnu-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/freetype2 -IlibImaging -I/edx/app/edxapp/venvs/edxapp/include -I/usr/local/include -I/usr/include -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu -c _imagingft.c -o build/temp.linux-x86_64-2.7/_imagingft.o
+_imagingft.c:73:31: fatal error: freetype/fterrors.h: No such file or directory
+#include
+^
+compilation terminated.
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+Complete output from command /edx/app/edxapp/venvs/edxapp/bin/python -c "import setuptools, tokenize;__file='/edx/app/edxapp/venvs/edxapp/build/Pillow/setup.py';exec(compile(getattr(tokenize, 'open', open)(file).read().replace('\r\n', '\n'), file, 'exec'))" install --record /tmp/pip-jLnUps-record/install-record.txt --single-version-externally-managed --compile --install-headers /edx/app/edxapp/venvs/edxapp/include/site/python2.7:
+running install
+
+running build
+
+running build_py
+
+creating build
+
+creating build/lib.linux-x86_64-2.7
+...................................................................................................
+
+...................................................................................................
+
+x86_64-linux-gnu-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/freetype2 -IlibImaging -I/edx/app/edxapp/venvs/edxapp/include -I/usr/local/include -I/usr/include -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu -c _imagingft.c -o build/temp.linux-x86_64-2.7/_imagingft.o
+
+_imagingft.c:73:31: fatal error: freetype/fterrors.h: No such file or directory
+
+#include
+
+                           ^
+
+compilation terminated.
+
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+
+Cleaning up...
+Command /edx/app/edxapp/venvs/edxapp/bin/python -c "import setuptools, tokenize;file='/edx/app/edxapp/venvs/edxapp/build/Pillow/setup.py';exec(compile(getattr(tokenize, 'open', open)(file).read().replace('\r\n', '\n'), file, 'exec'))" install --record /tmp/pip-jLnUps-record/install-record.txt --single-version-externally-managed --compile --install-headers /edx/app/edxapp/venvs/edxapp/include/site/python2.7 failed with error code 1 in /edx/app/edxapp/venvs/edxapp/build/Pillow
+Storing debug log for failure in /edx/app/edxapp/.pip/pip.log
+
+FATAL: all hosts have already failed -- aborting
+
+PLAY RECAP ********************************************************************
+to retry, use: --limit @/home/ubuntu/edx_sandbox.retry
+
+localhost : ok=159 changed=25 unreachable=0 failed=1 
+```
+
+**Sol**
+
+freetype2 is there instead of freetype so, make symlink..
+
+sudo ln -s /usr/include/freetype2 /usr/include/freetype
 
 
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
