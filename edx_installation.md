@@ -96,7 +96,6 @@ Depends: node­-which but it is not going to be installed
 E: Unable to correct problems, you have held broken packages.
 ```
 **Sol**
-*Method 1:*
 
 a)sudo apt­-get remove nodejs nodejs-­dev
 
@@ -118,7 +117,37 @@ click the package and install through Ubuntu Software Center by clicking install
 
 d)sudo apt­-get install npm
 
-*Method 2:*
+
+###4)Error in installing nltk
+
+**Sol**
+
+sudo /edx/app/ora/venvs/ora/bin/python -­m nltk.downloader ­-d /edx/var/ora/nltk_data all
+
+###5)npm Error
+
+```
+npm ERR! install Couldn't read dependencies
+npm ERR! Error: ENOENT, open 'C:\projects\Client-A\Live\package.json'
+npm ERR! If you need help, you may report this log at:
+npm ERR!     <http://github.com/isaacs/npm/issues>
+npm ERR! or email it to:
+npm ERR!     <npm-@googlegroups.com>
+
+npm ERR! System Windows_NT 6.1.7601
+npm ERR! command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+npm ERR! cwd C:\projects\Client-A\Live\
+npm ERR! node -v v0.8.22
+npm ERR! npm -v 1.2.14
+npm ERR! path C:\projects\Client-A\Live\package.json
+npm ERR! code ENOENT
+npm ERR! errno 34
+npm ERR!
+npm ERR! Additional logging details can be found in:
+npm ERR!     C:\projects\Client-A\Live\npm-debug.log
+npm ERR! not ok code 0
+```
+** Sol **
 
 sudo apt-get purge nodejs npm
 
@@ -127,12 +156,6 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs
 
 sudo apt­-get install npm
-
-###4)Error in installing nltk
-
-**Sol**
-
-sudo /edx/app/ora/venvs/ora/bin/python -­m nltk.downloader ­-d /edx/var/ora/nltk_data all
 
 ###5)Error in installing pika
 ```
