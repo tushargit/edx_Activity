@@ -109,6 +109,10 @@ c)Download nodejs­-dev from http://packages.ubuntu.com/precise/i386/nodejs­dev
 
 (ubuntu.cs.utah.edu/ubuntu or any other )
 
+OR
+http://www.ubuntuupdates.org/package/core/precise/universe/base/nodejs-dev
+
+
 click the package and install through Ubuntu Software Center by clicking install button
 
 d)sudo apt­-get install npm
