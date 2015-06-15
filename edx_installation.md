@@ -157,7 +157,7 @@ sudo apt-get install -y nodejs
 
 sudo apt­-get install npm
 
-###5)Error in installing pika
+###6)Error in installing pika
 ```
 msg:Command /usr/bin/git clone -­q git://github.com/pika/pika.git /edx/app/xqueue/venvs/xqueue/src/pika/
 
@@ -190,7 +190,7 @@ and comments the following
  git: dest={{xqueue_code_dir}} repo={{xqueue_source_repo}} version={{xqueue_version}}
 ```
 
-###6)Error in installing discern
+###7)Error in installing discern
 ```
 IOError: Could not build the egg.
 
@@ -214,7 +214,7 @@ a)sudo gedit /var/tmp/configuration/playbooks/roles/discern/defaults/main.yml
 ```
 changed the value of variable 'discern_source_repo' to 'https://github.com/defance/discern.git'
 ```
-###  7) Internal Server Error in CMS running
+### 8) Internal Server Error in CMS running
 
 **Sol**
 
@@ -263,7 +263,7 @@ me.save()
 
 sudo -­u www­-data /edx/bin/python.edxapp ./manage.py lms syncdb ­­ --migrate ­­ --settings aws
 
-###8) Error in discern and ease requirement installation
+###9) Error in discern and ease requirement installation
 
 **Sol**
 
@@ -286,7 +286,7 @@ c)sudo gedit /var/tmp/configuration/playbooks/roles/discern/tasks/deploy.yml
  git: dest={{ discern_code_dir }} repo={{ discern_source_repo }} version={{ discern_version }}
 
 ```
-### 9) Error in edxapp sync and migrate
+### 10) Error in edxapp sync and migrate
 ```
 msg:ImportError: No module named dateutil.relativedelta
 ```
@@ -311,7 +311,7 @@ d)copy folder python_dateutil­2.2­py2.7.egg­info and paste into
 
 
 
-### 10) Error in forum installation
+### 11) Error in forum installation
 ```
 TASK: [forum | test that the required service are listening] ******************
 
@@ -330,7 +330,7 @@ sudo add­-apt­-repository ppa:webupd8team/java
 sudo apt-­get install oracle-­java7­-installer
 
 
-###11)Error in installing Supervisior
+###12)Error in installing Supervisior
 ```
 TASK: [supervisor | install supervisor in its venv] ***************************
 failed: [localhost] => {"failed": true, "item": ""}
@@ -360,7 +360,7 @@ localhost                  : ok=65   changed=5    unreachable=0    failed=1
 sudo  pip install virtualenv==1.7.1.2
 
 
-###12)Error in installing Mongodb
+###13)Error in installing Mongodb
 ```
 TASK: [mongo | install mongo server and recommends] ***************************
 
@@ -442,7 +442,7 @@ sudo apt-get purge mongodb-10gen
 sudo apt-get autoremove
 
 
-###13)Error in edxapp  gather assets
+###14)Error in edxapp  gather assets
 ```
 TASK: [edxapp | gather  static assets with rake] ******************************
 failed: [localhost] => (item=lms) => {"changed": true, "cmd": "SERVICE_VARIANT=lms rake lms:gather_assets:aws ", "delta": "0:00:00.099276", "end": "2014-08-07 07:19:47.397273", "item": "lms", "rc": 1, "start": "2014-08-07 07:19:47.297997"}
@@ -496,7 +496,7 @@ notify:
 environment: "{{ edxapp_environment }}"
 
 ```
-###14)Error in Task[discern|install ease python package]
+###15)Error in Task[discern|install ease python package]
  ImportError: No module named numpy.distutils.core #18 
  
   File "setup.py", line 152, in <module>
@@ -511,7 +511,7 @@ sudo  pip install numpy==1.6.2
 
 **Error on sudo /edx/bin/update edx-platform master**
 
-###15) TASK: [edxapp | code sandbox | put sandbox apparmor profile in complain mode] 
+###16) TASK: [edxapp | code sandbox | put sandbox apparmor profile in complain mode] 
 failed: [localhost] => {"changed": true, "cmd": ["/usr/sbin/aa-complain", "/etc/apparmor.d/code.sandbox"], "delta": "0:00:00.189952", "end": "2014-06-09 12:44:21.808579", "item": "", "rc": 1, "start": "2014-06-09 12:44:21.618627"}
 stdout: /etc/apparmor.d/code.sandbox does not exist, please double-check the path.
 
@@ -527,7 +527,7 @@ source /edx/app/edx_ansible/venvs/edx_ansible/bin/activate
 cd /edx/app/edx_ansible/edx_ansible/playbooks/edx-east
 
 
-###16)Error in fetching  ppa Launchpad
+###17)Error in fetching  ppa Launchpad
 ```
 TASK: [common | Install python-pycurl] 
 failed: [localhost] => {"failed": true, "item": "", "parsed": false}
@@ -571,7 +571,7 @@ sudo apt-get update
 
 
 
-###17)Error in update (dpkg: error:failed to open package info)
+###18)Error in update (dpkg: error:failed to open package info)
 ```
 TASK: [common | Install role-independent useful system packages] ************** 
 failed: [localhost] => {"failed": true, "item": ""}
@@ -605,7 +605,7 @@ sudo cp /var/lib/dpkg/available-old /var/lib/dpkg/available
 
 sudo apt-get update
 
-###18)Error in update supervisor configuration
+###19)Error in update supervisor configuration
 ```
 TASK: [supervisor | update supervisor configuration] ************************** 
 failed: [localhost] => {"changed": true, "cmd": "/edx/app/devpi/venvs/supervisor/bin/supervisorctl -c /edx/app/devpi/supervisor/supervisord.conf update ", "delta": "0:00:00.127061", "end": "2015-05-14 11:53:09.898837", "item": "", "rc": 2, "start": "2015-05-14 11:53:09.771776", "stdout_lines": ["error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 224"]}
@@ -625,7 +625,7 @@ sudo pkill -u www-data
 
 
 
-###19)Error in Elasticsearch (link creation for elasticsearch server restart)
+###20)Error in Elasticsearch (link creation for elasticsearch server restart)
 ```
 ..........................................................
 ..........................................................
@@ -717,7 +717,7 @@ Installing new version of config file /etc/elasticsearch/elasticsearch.yml ...
  * Starting ElasticSearch Server                          
 
 ```
-###20)Error in sync and migrate
+###21)Error in sync and migrate
 
 ```
 TASK: [edxapp | syncdb and migrate] *******************************************
@@ -748,7 +748,7 @@ mysql> update user set password=PASSWORD('') where User='root';
 mysql> flush privileges;
 
 
-###21)TASK: [edxapp | install python base-requirements] 
+###22)TASK: [edxapp | install python base-requirements] 
 
 ```
 "failed: [localhost] => {"changed": true, "cmd": "/edx/app/edxapp/venvs/edxapp/bin/pip install -i https://pypi.python.org/simple --exists-action w --use-mirrors -r /edx/app/edxapp/edx-platform/requirements/edx/base.txt ", "delta": "0:00:44.433877", "end": "2014-09-30 07:08:45.484337", "item": "", "rc": 1, "start": "2014-09-30 07:08:01.050460"}
@@ -808,7 +808,7 @@ freetype2 is there instead of freetype so, make symlink..
 
 sudo ln -s /usr/include/freetype2 /usr/include/freetype
 
-###22)Error in installing  python post-post requirements
+###23)Error in installing  python post-post requirements
 ```
 ...............................................................................
 
@@ -862,7 +862,7 @@ replace code
   when: not inst.stat.exists or new.stat.md5 != inst.stat.md5
 
 ```
-###23)Error in Bower
+###24)Error in Bower
 ```
 ............................................................................
 ............................................................................
