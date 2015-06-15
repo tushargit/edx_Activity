@@ -97,6 +97,7 @@ E: Unable to correct problems, you have held broken packages.
 ```
 **Sol**
 *Method 1:*
+
 a)sudo apt­-get remove nodejs nodejs-­dev
 
 b)Download nodejs_0.6.12~dfsg1­1ubuntu1_i386.deb (663.7 KiB) from
