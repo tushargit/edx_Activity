@@ -96,7 +96,7 @@ Depends: node­-which but it is not going to be installed
 E: Unable to correct problems, you have held broken packages.
 ```
 **Sol**
-
+*Method 1:*
 a)sudo apt­-get remove nodejs nodejs-­dev
 
 b)Download nodejs_0.6.12~dfsg1­1ubuntu1_i386.deb (663.7 KiB) from
@@ -116,6 +116,16 @@ http://www.ubuntuupdates.org/package/core/precise/universe/base/nodejs-dev
 click the package and install through Ubuntu Software Center by clicking install button
 
 d)sudo apt­-get install npm
+
+*Method 2:*
+
+sudo apt-get purge nodejs npm
+
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+
+sudo apt-get install -y nodejs
+
+sudo apt­-get install npm
 
 ###4)Error in installing nltk
 
