@@ -839,6 +839,25 @@ replace code
   when: not inst.stat.exists or new.stat.md5 != inst.stat.md5
 
 ```
+###23)Error in Bower
+```
+............................................................................
+............................................................................
+bower globalize#1.0.0-alpha.17                                    not-cached git://github.com/jquery/globalize.git#1.0.0-alpha.17
+bower globalize#1.0.0-alpha.17                                       resolve git://github.com/jquery/globalize.git#1.0.0-alpha.17
+bower globalize#1.0.0-alpha.17                                       resolve git://github.com/jquery/globalize.git#1.0.0-alpha.17
+bower natural-sort#dbf4ca259b327a488bd1d7897fd46d80c414a7e0          ECMDERR Failed to execute "git clone git://github.com/overset/javascript-natural-sort.git /tmp/tushar/bower/natural-sort-15515-Knfiii --progress", exit code of #128 fatal: unable to connect to github.com: github.com[0: 192.30.252.129]: errno=Connection timed out
+
+Additional error details:
+fatal: unable to connect to github.com:
+github.com[0: 192.30.252.129]: errno=Connection timed out
+make: *** [requirements.js] Error 1
+```
+**Sol** 
+
+Paste on terminal
+
+git config --global url."https://".insteadOf git://
 
 sudo /edx/bin/ansible-playbook -i localhost, -c local edxapp.yml -e 'edx_platform_version=master'
 
