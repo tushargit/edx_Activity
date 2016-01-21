@@ -27,7 +27,7 @@ Login in Django website   using EdX authentication(Login) on ubuntu
  "OAUTH_OIDC_ISSUER": "http://lms.org/oauth2", 
 
 ```
-*sudo vi /edx/app/edxapp/lms/envs/common.py
+* sudo vi /edx/app/edxapp/lms/envs/common.py
 ```
 'AUTH_USE_OPENID': True, 
  'AUTH_USE_OPENID_PROVIDER': True,
