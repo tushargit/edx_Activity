@@ -1,5 +1,5 @@
-Login using EdX authentication(Login) on ubuntu  
-=======================================
+Login in Django website   using EdX authentication(Login) on ubuntu  
+===================================================================
 * pip install  edx-auth-backends
 * Modification on lms server 
  - Go to lms admin interface and select oauth2 client 
