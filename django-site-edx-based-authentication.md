@@ -3,9 +3,9 @@ Login using EdX authentication(Login) on ubuntu
 * pip install  edx-auth-backends
 * Modification on lms server 
  - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauth.png' width="600px" height="400px" />
- - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauthclientcreate.png)
- - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauthadmin2.png) 
- - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauthaddtrustedclient.png)
+ - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthclientcreate.png' width="600px" height="400px" />
+ - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthadmin2.png' width="600px" height="400px" />
+ - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthaddtrustedclient.png' width="600px" height="400px" />
 * sudo vi /{PROJECTDIR}/{PROJECT}/{PROJECT}/settings.py
 ```
 INSTALLED_APPS = (
