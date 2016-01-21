@@ -21,10 +21,10 @@ Login using EdX authentication(Login) on ubuntu
         "AUTH_USE_OPENID_PROVIDER": true,
      }
 
-"JWT_ISSUER": "http://edxlmsdomain.com/oauth2",
+"JWT_ISSUER": "http://lms.org/oauth2",
 
  "OAUTH_ENFORCE_SECURE": false, 
- "OAUTH_OIDC_ISSUER": "http://edxlmsdomain.com/oauth2", 
+ "OAUTH_OIDC_ISSUER": "http://lms.org/oauth2", 
 
 ```
 *sudo vi /edx/app/edxapp/lms/envs/common.py
@@ -81,7 +81,7 @@ SOCIAL_AUTH_USER_FIELDS = ['username', 'email', 'first_name', 'last_name']
 
 SOCIAL_AUTH_RAISE_EXCEPTIONS = True
 
-OAUTH2_PROVIDER_URL = 'http://edxlmsdomain.com/oauth2'
+OAUTH2_PROVIDER_URL = 'http://lms.org/oauth2'
 
 SOCIAL_AUTH_EDX_OIDC_URL_ROOT = OAUTH2_PROVIDER_URL
 SOCIAL_AUTH_EDX_OIDC_KEY = 'CLIENT ID COPIED FROM OAUTH2 LMS'
