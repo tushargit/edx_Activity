@@ -4,12 +4,38 @@ Login using EdX authentication(Login) on ubuntu
 * Modification on lms server 
  - Go to lms admin interface and select oauth2 client 
    <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauth.png' width="600px" height="400px" />
-  
- - Fill user and replace mysite.com with your site url or IP if running on Ip 
+   
+ - Fill user and replace mysite.com with your site url or IP if running on Ip as given below. 
    <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthclientcreate.png' width="600px" height="400px" />
    
- - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthadmin2.png' width="600px" height="400px" />
- - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthaddtrustedclient.png' width="600px" height="400px" />
+ - Select trusted client from admin interface.
+   <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthadmin2.png' width="600px" height="400px" />
+   
+ - Add your client from dropdown to trusted client .
+   <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthaddtrustedclient.png' width="600px" height="400px" />
+   
+* sudo vi  /edx/app/edxapp/lms.env.json
+```
+"FEATURES": { 
+        "ENABLE_OAUTH2_PROVIDER": true, 
+        "AUTH_USE_OPENID_PROVIDER": true,
+     }
+
+"JWT_ISSUER": "http://edxlmsdomain.com/oauth2",
+
+ "OAUTH_ENFORCE_SECURE": false, 
+ "OAUTH_OIDC_ISSUER": "http://edxlmsdomain.com/oauth2", 
+
+```
+*sudo vi /edx/app/edxapp/lms/envs/common.py
+```
+'AUTH_USE_OPENID': True, 
+ 'AUTH_USE_OPENID_PROVIDER': True,
+'ENABLE_OAUTH2_PROVIDER': True,
+OAUTH_OIDC_ISSUER = 'http://127.0.0.1:8000/oauth2' 
+```
+   
+
 * sudo vi /{PROJECTDIR}/{PROJECT}/{PROJECT}/settings.py
 ```
 INSTALLED_APPS = (
@@ -63,25 +89,5 @@ SOCIAL_AUTH_EDX_OIDC_SECRET = 'CLIENT SECRET COPIED FROM OAUTH2 LMS'
 SOCIAL_AUTH_EDX_OIDC_ID_TOKEN_DECRYPTION_KEY = SOCIAL_AUTH_EDX_OIDC_SECRET
 LOGIN_REDIRECT_URL = '/'
 
-```
-* sudo vi  /edx/app/edxapp/lms.env.json
-```
-"FEATURES": { 
-        "ENABLE_OAUTH2_PROVIDER": true, 
-        "AUTH_USE_OPENID_PROVIDER": true,
-     }
-
-"JWT_ISSUER": "http://edxlmsdomain.com/oauth2",
-
- "OAUTH_ENFORCE_SECURE": false, 
- "OAUTH_OIDC_ISSUER": "http://edxlmsdomain.com/oauth2", 
-
-```
-*sudo vi /edx/app/edxapp/lms/envs/common.py
-```
-'AUTH_USE_OPENID': True, 
- 'AUTH_USE_OPENID_PROVIDER': True,
-'ENABLE_OAUTH2_PROVIDER': True,
-OAUTH_OIDC_ISSUER = 'http://127.0.0.1:8000/oauth2' 
 ```
 
