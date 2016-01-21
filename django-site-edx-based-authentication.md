@@ -1,7 +1,8 @@
 Login using EdX authentication(Login) on ubuntu  
 =======================================
 * pip install  edx-auth-backends
- - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauth.png)
+* Modification on lms server 
+ - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauth.png {width=400px height=600px})
  - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauthclientcreate.png)
  - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauthadmin2.png) 
  - ![alt tag](https://github.com/tushargit/edx_Activity/blob/master/lmsoauthaddtrustedclient.png)
