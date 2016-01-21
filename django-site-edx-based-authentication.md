@@ -2,9 +2,12 @@ Login using EdX authentication(Login) on ubuntu
 =======================================
 * pip install  edx-auth-backends
 * Modification on lms server 
- - Go to lms admin interface and select oauth
+ - Go to lms admin interface and select oauth2 client 
    <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauth.png' width="600px" height="400px" />
- - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthclientcreate.png' width="600px" height="400px" />
+  
+ - Fill user and replace mysite.com with your site url or IP if running on Ip 
+   <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthclientcreate.png' width="600px" height="400px" />
+   
  - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthadmin2.png' width="600px" height="400px" />
  - <img src='https://github.com/tushargit/edx_Activity/blob/master/lmsoauthaddtrustedclient.png' width="600px" height="400px" />
 * sudo vi /{PROJECTDIR}/{PROJECT}/{PROJECT}/settings.py
