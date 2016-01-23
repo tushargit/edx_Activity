@@ -90,4 +90,4 @@ SOCIAL_AUTH_EDX_OIDC_ID_TOKEN_DECRYPTION_KEY = SOCIAL_AUTH_EDX_OIDC_SECRET
 LOGIN_REDIRECT_URL = '/'
 
 ```
-* python manage.py migrate
+* python manage.py migrate(in your django project directory)
